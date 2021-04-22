@@ -1,0 +1,31 @@
+name: Deploy to Github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+
+      - name: Install dependencies
+        run: |
+          flutter pub get
+
+      - name: Transpile
+        run: |
+          flutter build web
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2.8.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./build/web
