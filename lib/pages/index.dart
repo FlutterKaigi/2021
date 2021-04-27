@@ -40,25 +40,71 @@ class Body extends StatelessWidget {
 class LargeBodyChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 600,
-      child: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          FractionallySizedBox(
-            alignment: Alignment.center,
-            widthFactor: .6,
+    return Column(
+      children: <Widget>[
+        Container(
+          width: 2000,
+          height: MediaQuery.of(context).size.height,
+          color: Colors.white,
+          child: FractionallySizedBox(
+            widthFactor: .8,
+            child: FractionallySizedBox(
+              alignment: Alignment.center,
+              widthFactor: .6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  RichText(
+                    text: const TextSpan(
+                      text: 'FlutterKaigi 2021',
+                      style: TextStyle(
+                        fontSize: 60,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 12, top: 20),
+                    child: Text('Tech Conference for Flutter in Japan'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(16),
+          color: Colors.white,
+          alignment: Alignment.center,
+          child: const Text(
+            '©︎ 2021 Flutter Japan User Group',
+            style: TextStyle(color: Colors.black87),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SmallBodyChild extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(40),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 RichText(
                   text: const TextSpan(
-                      text: 'FlutterKaigi 2021',
-                      style: TextStyle(
-                          fontSize: 60,
-                          color: Colors.black87,
-                      ),
+                    text: 'FlutterKaigi 2021',
+                    style: TextStyle(
+                      fontSize: 60,
+                      color: Colors.black87,
+                    ),
                   ),
                 ),
                 const Padding(
@@ -67,38 +113,18 @@ class LargeBodyChild extends StatelessWidget {
                 ),
               ],
             ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class SmallBodyChild extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            RichText(
-              text: const TextSpan(
-                text: 'FlutterKaigi 2021',
-                style: TextStyle(
-                  fontSize: 60,
-                  color: Colors.black87,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 12, top: 20),
-              child: Text('Tech Conference for Flutter in Japan'),
-            ),
-          ],
+          ),
         ),
-      ),
+        Container(
+          padding: const EdgeInsets.all(16),
+          color: Colors.white,
+          alignment: Alignment.center,
+          child: const Text(
+            '©︎ 2021 Flutter Japan User Group',
+            style: TextStyle(color: Colors.black87),
+          ),
+        ),
+      ]
     );
   }
 }
