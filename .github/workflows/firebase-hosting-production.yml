@@ -1,0 +1,34 @@
+name: Deploy to Firebase hosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+
+      - name: Install dependencies
+        run: |
+          flutter pub get
+
+      - name: Transpile
+        run: |
+          flutter build web
+
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTERKAIGI }}"
+          projectId: flutterkaigi
+          channelId: live
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
