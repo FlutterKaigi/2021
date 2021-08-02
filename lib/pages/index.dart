@@ -55,18 +55,18 @@ class LargeBodyChild extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Image.asset(
+                    '/flutterkaigi-center_logo.png',
+                    width: 398,
+                  ),
                   RichText(
                     text: const TextSpan(
-                      text: 'FlutterKaigi 2021',
+                      text: '@ONLINE / 2021 Winter',
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 36,
                         color: Colors.black87,
                       ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 12, top: 20),
-                    child: Text('Tech Conference for Flutter in Japan'),
                   ),
                 ],
               ),
@@ -98,18 +98,18 @@ class SmallBodyChild extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                Image.asset(
+                  '/flutterkaigi-center_logo.png',
+                  width: 284,
+                ),
                 RichText(
                   text: const TextSpan(
-                    text: 'FlutterKaigi 2021',
+                    text: '@ONLINE / 2021 Winter',
                     style: TextStyle(
-                      fontSize: 60,
+                      fontSize: 24,
                       color: Colors.black87,
                     ),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 12, top: 20),
-                  child: Text('Tech Conference for Flutter in Japan'),
                 ),
               ],
             ),
