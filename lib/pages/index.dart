@@ -61,7 +61,7 @@ class LargeBodyChild extends StatelessWidget {
                   ),
                   RichText(
                     text: const TextSpan(
-                      text: '@ONLINE / 2021 Winter',
+                      text: '@ONLINE / Winter 2021',
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.black87,
@@ -104,7 +104,7 @@ class SmallBodyChild extends StatelessWidget {
                 ),
                 RichText(
                   text: const TextSpan(
-                    text: '@ONLINE / 2021 Winter',
+                    text: '@ONLINE / Winter 2021',
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.black87,
