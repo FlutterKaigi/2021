@@ -39,7 +39,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.indigo,
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
           child:
@@ -48,12 +48,9 @@ class NavBar extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(
-                      'FlutterKaigi 2021',
-                      style: TextStyle(
-                          fontSize: 26,
-                          color: Colors.white,
-                      ),
+                  Image.asset(
+                    '/flutterkaigi-navbar_logo.png',
+                    width: 240,
                   ),
                 ],
               ),
@@ -62,8 +59,6 @@ class NavBar extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[...navItem()]
                 )
-              else
-                Image.network('assets/flutter.png', width: 26, height: 26)
             ],
           ),
         ),
