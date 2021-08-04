@@ -2,6 +2,7 @@ import 'package:confwebsite2021/utils/responsive_layout.dart';
 import 'package:confwebsite2021/widgets/navbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class TopPage extends StatelessWidget {
   @override
@@ -9,9 +10,9 @@ class TopPage extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color(0xFFF8FBFF),
-            Color(0xFFFCFDFD),
-          ])),
+        Color(0xFFF8FBFF),
+        Color(0xFFFCFDFD),
+      ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
@@ -55,10 +56,18 @@ class LargeBodyChild extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(
-                    '/flutterkaigi-center_logo.png',
-                    width: 398,
+                  SvgPicture.asset(
+                    '/flutterkaigi_log.svg',
+                    width: 320,
                   ),
+                  const Text(
+                    'FlutterKaigi',
+                    style: TextStyle(
+                      fontSize: 64,
+                      color: Colors.black87,
+                    ),
+                  ),
+                  const SizedBox(height: 32),
                   RichText(
                     text: const TextSpan(
                       text: '@ONLINE / Winter 2021',
@@ -90,41 +99,46 @@ class LargeBodyChild extends StatelessWidget {
 class SmallBodyChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(40),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Image.asset(
-                  '/flutterkaigi-center_logo.png',
-                  width: 284,
+    return Column(children: [
+      SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SvgPicture.asset(
+                '/flutterkaigi_log.svg',
+                width: 284,
+              ),
+              const Text(
+                'FlutterKaigi',
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.black87,
                 ),
-                RichText(
-                  text: const TextSpan(
-                    text: '@ONLINE / Winter 2021',
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.black87,
-                    ),
+              ),
+              RichText(
+                text: const TextSpan(
+                  text: '@ONLINE / Winter 2021',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black87,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(16),
-          color: Colors.white,
-          alignment: Alignment.center,
-          child: const Text(
-            '©︎ 2021 Flutter Japan User Group',
-            style: TextStyle(color: Colors.black87),
-          ),
+      ),
+      Container(
+        padding: const EdgeInsets.all(16),
+        color: Colors.white,
+        alignment: Alignment.center,
+        child: const Text(
+          '©︎ 2021 Flutter Japan User Group',
+          style: TextStyle(color: Colors.black87),
         ),
-      ]
-    );
+      ),
+    ]);
   }
 }
