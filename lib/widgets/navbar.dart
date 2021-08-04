@@ -1,6 +1,7 @@
 import 'package:confwebsite2021/utils/responsive_layout.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LinkModel {
@@ -48,8 +49,8 @@ class NavBar extends StatelessWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Image.asset(
-                    '/flutterkaigi-navbar_logo.png',
+                  SvgPicture.asset(
+                    '/flutterkaigi-navbar_logo.svg',
                     width: 240,
                   ),
                 ],
