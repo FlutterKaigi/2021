@@ -1,5 +1,6 @@
 import 'package:confwebsite2021/utils/responsive_layout.dart';
 import 'package:confwebsite2021/widgets/navbar.dart';
+import 'package:confwebsite2021/widgets/footer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -82,15 +83,7 @@ class LargeBodyChild extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(16),
-          color: Colors.white,
-          alignment: Alignment.center,
-          child: const Text(
-            '©︎ 2021 Flutter Japan User Group',
-            style: TextStyle(color: Colors.black87),
-          ),
-        ),
+        Footer(),
       ],
     );
   }
@@ -130,15 +123,7 @@ class SmallBodyChild extends StatelessWidget {
           ),
         ),
       ),
-      Container(
-        padding: const EdgeInsets.all(16),
-        color: Colors.white,
-        alignment: Alignment.center,
-        child: const Text(
-          '©︎ 2021 Flutter Japan User Group',
-          style: TextStyle(color: Colors.black87),
-        ),
-      ),
+      Footer(),
     ]);
   }
 }
