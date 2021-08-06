@@ -1,6 +1,7 @@
 import 'package:confwebsite2021/utils/responsive_layout.dart';
 import 'package:confwebsite2021/widgets/navbar.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
+import 'package:confwebsite2021/widgets/social.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,6 +79,7 @@ class LargeBodyChild extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Social(),
                 ],
               ),
             ),
@@ -119,6 +121,7 @@ class SmallBodyChild extends StatelessWidget {
                   ),
                 ),
               ),
+              Social(),
             ],
           ),
         ),
