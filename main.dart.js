@@ -12613,11 +12613,12 @@ aqF:function(a,b){var s
 a.cv(0,b,!0)
 s=a.r2
 s.toString
-return s}},O={q6:function q6(a,b,c,d){var _=this
+return s}},O={q6:function q6(a,b,c,d,e){var _=this
 _.a=a
 _.b=b
 _.c=c
-_.d=d},Ga:function Ga(a,b){this.c=a
+_.d=d
+_.e=e},Ga:function Ga(a,b){this.c=a
 this.a=b},XU:function XU(a){this.a=a},XV:function XV(a){this.a=a},c4:function c4(a,b){this.a=a
 this.$ti=b},a2Q:function a2Q(a){this.a=a},il:function il(a){this.a=a},hb:function hb(a,b){this.a=a
 this.b=b},hc:function hc(a,b,c,d){var _=this
@@ -16032,14 +16033,14 @@ s=new E.hM(new Float64Array(4))
 s.rU(0,0,0,a.b)
 r.rT(1,s)
 return r},
-qA:function(a){var s=0,r=P.a5(t.y),q,p,o,n,m
-var $async$qA=P.a1(function(b,c){if(b===1)return P.a2(c,r)
+qA:function(a,b){var s=0,r=P.a5(t.y),q,p,o,n,m
+var $async$qA=P.a1(function(c,d){if(c===1)return P.a2(d,r)
 while(true)switch(s){case 0:p=P.a3t(C.c.yK(a),0,null)
 o=p.ghP()==="http"||p.ghP()==="https"
 n=$.amh()
 s=3
-return P.aa(n.He(a,!1,!1,C.N9,!1,o,!1,null),$async$qA)
-case 3:m=c
+return P.aa(n.He(a,!1,!1,C.N9,!1,o,!1,b),$async$qA)
+case 3:m=d
 q=m
 s=1
 break
@@ -35713,7 +35714,7 @@ s.toString
 r.seu(0,!U.eg(s))}this.cN()}}
 E.mB.prototype={
 S:function(a,b){var s=null
-return M.lg(s,M.aiz(C.ba,E.aiF(T.nx(H.a([new O.Ga(H.a([new O.q6("Home","/",s,s),new O.q6("Event","https://flutter-jp.connpass.com/",s,s),new O.q6("\u30c4\u30a4\u30fc\u30c8","https://twitter.com/intent/tweet?hashtags=FlutterKaigi","#FlutterKaigi \u3067\u30c4\u30a4\u30fc\u30c8\u3057\u3088\u3046\uff01",G.J_("/twitter_white.svg",20))],t.AS),s),new E.zs(s)],t.E),C.bb,C.c2))),s,C.tw,s,s,s,s)}}
+return M.lg(s,M.aiz(C.ba,E.aiF(T.nx(H.a([new O.Ga(H.a([new O.q6("Home","/",s,s,s),new O.q6("Event","https://flutter-jp.connpass.com/",!0,s,s),new O.q6("\u30c4\u30a4\u30fc\u30c8","https://twitter.com/intent/tweet?hashtags=FlutterKaigi",s,"#FlutterKaigi \u3067\u30c4\u30a4\u30fc\u30c8\u3057\u3088\u3046\uff01",G.J_("/twitter_white.svg",20))],t.AS),s),new E.zs(s)],t.E),C.bb,C.c2))),s,C.tw,s,s,s,s)}}
 E.zs.prototype={
 S:function(a,b){return new K.HZ(new E.DV(null),new E.IG(null),null)}}
 E.DV.prototype={
@@ -35763,7 +35764,7 @@ var $async$$0=P.a1(function(a,b){if(a===1)return P.a2(b,r)
 while(true)switch(s){case 0:p=J.aG(q.a,"url")
 p.toString
 s=2
-return P.aa(T.qA(p),$async$$0)
+return P.aa(T.qA(p,null),$async$$0)
 case 2:return P.a3(null,r)}})
 return P.a4($async$$0,r)},
 $S:30}
@@ -35773,21 +35774,23 @@ O.Ga.prototype={
 a0c:function(){var s,r,q,p,o,n,m=null,l=t.E,k=H.a([],l)
 for(s=this.c,r=0;r<3;++r){q=s[r]
 p=H.a([C.Sa],l)
-o=q.d
+o=q.e
 n=q.a
 if(o==null){o=D.acm(m,m,m,m,m,m,m,C.p,m,m,C.m,m,m,m,m,m,m,m)
 p.push(D.aha(L.a2Y(n,C.U7),new O.XU(q),o))}else{n=L.a2Y(n,m)
 o=H.a([C.S9,o,C.Sc,n,C.Sb],l)
-p.push(new E.rX(new E.Kv(T.v1(o,C.c2,C.K3),m),q.c,new O.XV(q),C.fN,!0,C.tu,m))}C.b.I(k,p)}return k},
+p.push(new E.rX(new E.Kv(T.v1(o,C.c2,C.K3),m),q.d,new O.XV(q),C.fN,!0,C.tu,m))}C.b.I(k,p)}return k},
 S:function(a,b){var s=null,r=t.E
 r=H.a([T.v1(H.a([G.J_("/flutterkaigi-navbar_logo.svg",240)],r),C.c2,C.c3)],r)
 if(!(b.a9(t.l).f.a.a<800))r.push(T.v1(P.ab(this.a0c(),!0,t.l7),C.dz,C.c3))
 return M.lg(s,new T.dB(C.xZ,T.v1(r,C.qC,C.c3),s),C.m,s,s,s,s,s)}}
 O.XU.prototype={
-$0:function(){var s=0,r=P.a5(t.H),q=this
+$0:function(){var s=0,r=P.a5(t.H),q=this,p,o
 var $async$$0=P.a1(function(a,b){if(a===1)return P.a2(b,r)
-while(true)switch(s){case 0:s=2
-return P.aa(T.qA(q.a.b),$async$$0)
+while(true)switch(s){case 0:p=q.a
+o=p.c===!0?"_blank":"_self"
+s=2
+return P.aa(T.qA(p.b,o),$async$$0)
 case 2:return P.a3(null,r)}})
 return P.a4($async$$0,r)},
 $S:30}
@@ -35795,7 +35798,7 @@ O.XV.prototype={
 $0:function(){var s=0,r=P.a5(t.H),q=this
 var $async$$0=P.a1(function(a,b){if(a===1)return P.a2(b,r)
 while(true)switch(s){case 0:s=2
-return P.aa(T.qA(q.a.b),$async$$0)
+return P.aa(T.qA(q.a.b,null),$async$$0)
 case 2:return P.a3(null,r)}})
 return P.a4($async$$0,r)},
 $C:"$0",
@@ -35817,7 +35820,7 @@ var $async$$0=P.a1(function(a,b){if(a===1)return P.a2(b,r)
 while(true)switch(s){case 0:p=J.aG(q.a,"url")
 p.toString
 s=2
-return P.aa(T.qA(p),$async$$0)
+return P.aa(T.qA(p,null),$async$$0)
 case 2:return P.a3(null,r)}})
 return P.a4($async$$0,r)},
 $C:"$0",
@@ -57437,10 +57440,10 @@ $S:386}
 D.a3y.prototype={}
 Y.a3z.prototype={
 He:function(a,b,c,d,e,f,g,h){var s,r
-if(this.d){s=P.au8(a)
+if(h==null){if(this.d){s=P.au8(a)
 s=s==null?null:s.ghP()
 s=J.dJ(C.S1.a,s)}else s=!1
-r=s?"_top":""
+r=s?"_top":""}else r=h
 C.at.a0k(this.c,a,r)
 return P.d_(!0,t.y)}}
 A.aaG.prototype={
