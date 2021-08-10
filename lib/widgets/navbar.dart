@@ -8,12 +8,14 @@ class _LinkModel {
   _LinkModel({
     required this.name,
     required this.url,
+    this.linkNewTab,
     this.icon,
     this.tooltip,
   });
 
   final String name;
   final String url;
+  final bool? linkNewTab;
   final String? tooltip;
   final Widget? icon;
 }
@@ -21,7 +23,11 @@ class _LinkModel {
 class NavBar extends StatelessWidget {
   final navLinks = [
     _LinkModel(name: 'Home', url: '/'),
-    _LinkModel(name: 'Event', url: 'https://flutter-jp.connpass.com/'),
+    _LinkModel(
+      name: 'Event',
+      url: 'https://flutter-jp.connpass.com/',
+      linkNewTab: true,
+    ),
     _LinkModel(
       name: 'ツイート',
       tooltip: '#FlutterKaigi でツイートしよう！',
@@ -40,7 +46,12 @@ class NavBar extends StatelessWidget {
         if (link.icon == null)
           ElevatedButton(
             onPressed: () async {
-              await launch(link.url);
+              await launch(
+                link.url,
+                webOnlyWindowName: link.linkNewTab == true
+                  ? '_blank'
+                  : '_self',
+              );
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.white,
