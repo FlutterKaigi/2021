@@ -4,59 +4,64 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LinkModel {
-  LinkModel(this.name, this.url);
+class _LinkModel {
+  _LinkModel({
+    required this.name,
+    required this.url,
+    this.icon,
+    this.tooltip,
+  });
 
   final String name;
   final String url;
+  final String? tooltip;
+  final Widget? icon;
 }
 
 class NavBar extends StatelessWidget {
-  final List<Map<String, dynamic>> navLinks = [
-    {'name': 'Home', 'url': '/', 'twitterIcon': false},
-    {'name': 'Event', 'url': 'https://flutter-jp.connpass.com/', 'twitterIcon': false},
-    {
-      'name': 'Tweet with #FlutterKaigi',
-      'url': 'https://twitter.com/intent/tweet?hashtags=FlutterKaigi',
-      'twitterIcon': true,
-    },
+  final navLinks = [
+    _LinkModel(name: 'Home', url: '/'),
+    _LinkModel(name: 'Event', url: 'https://flutter-jp.connpass.com/'),
+    _LinkModel(
+      name: 'ツイート',
+      tooltip: '#FlutterKaigi でツイートしよう！',
+      url: 'https://twitter.com/intent/tweet?hashtags=FlutterKaigi',
+      icon: SvgPicture.asset(
+        '/twitter_white.svg',
+        width: 20,
+      ),
+    ),
   ];
 
   List<Widget> navItem() {
-    return navLinks.map((link) {
-      if (link['twitterIcon'] == false)
-        return Padding(
-          padding: const EdgeInsets.only(left: 18),
-          child: ElevatedButton(
+    return [
+      for (final link in navLinks) ...[
+        const SizedBox(width: 18),
+        if (link.icon == null)
+          ElevatedButton(
             onPressed: () async {
-              await launch(link['url']!);
+              await launch(link.url);
             },
             style: ElevatedButton.styleFrom(
               primary: Colors.white,
               onPrimary: Colors.black,
             ),
             child: Text(
-              link['name']!,
+              link.name,
               style: const TextStyle(fontFamily: 'Montserrat-Bold'),
             ),
-          ),
-        );
-      else
-        return Padding(
-          padding: const EdgeInsets.only(left: 18),
-          child: FloatingActionButton.extended(
-            tooltip: '#FlutterKaigi でツイートしよう！',
-            icon: SvgPicture.asset(
-              '/twitter_white.svg',
-              width: 30,
-            ),
-            label: const Text('ツイート'),
+          )
+        else
+          FloatingActionButton.extended(
+            tooltip: link.tooltip,
+            icon: link.icon,
+            label: Text(link.name),
             onPressed: () async {
-              await launch('https://twitter.com/search?q=%23FlutterKaigi');
+              await launch(link.url);
             },
           ),
-        );
-    }).toList();
+      ]
+    ];
   }
 
   @override
