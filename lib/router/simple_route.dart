@@ -6,9 +6,9 @@ class SimpleRoute extends PageRoute<dynamic> {
 
   // ignore: sort_constructors_first
   SimpleRoute({
-    @required String name,
-    @required this.title,
-    @required this.builder,
+    required String name,
+    required this.title,
+    required this.builder,
   }) : super(
       settings: RouteSettings(
         name: name,

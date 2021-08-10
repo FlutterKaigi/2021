@@ -23,13 +23,13 @@ class NavBar extends StatelessWidget {
         padding: const EdgeInsets.only(left: 18),
         child: ElevatedButton(
           onPressed: () async {
-            await launch(link['url']);
+            await launch(link['url']!);
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.black,
           ),
           child: Text(
-            link['name'],
+            link['name']!,
             style: const TextStyle(fontFamily: 'Montserrat-Bold'),
           ),
         ),

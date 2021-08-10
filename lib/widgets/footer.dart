@@ -34,7 +34,7 @@ class Footer extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 18),
           child: ElevatedButton(
             onPressed: () async {
-              await launch(link['url']);
+              await launch(link['url']!);
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(20),
@@ -42,7 +42,7 @@ class Footer extends StatelessWidget {
               onPrimary: Colors.black,
             ),
             child: Text(
-              link['name'],
+              link['name']!,
               style: const TextStyle(
                 color: Colors.white70,
                 fontFamily: 'Montserrat-Bold',
