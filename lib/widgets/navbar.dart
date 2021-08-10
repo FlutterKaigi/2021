@@ -15,6 +15,10 @@ class NavBar extends StatelessWidget {
   final List<Map<String, String>> navLinks = [
     {'name': 'Home', 'url': '/'},
     {'name': 'Event', 'url': 'https://flutter-jp.connpass.com/'},
+    {
+      'name': 'Tweet with #FlutterKaigi',
+      'url': 'https://twitter.com/intent/tweet?hashtags=FlutterKaigi',
+    },
   ];
 
   List<Widget> navItem() {
@@ -40,29 +44,27 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
-          child:
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                SvgPicture.asset(
+                  '/flutterkaigi-navbar_logo.svg',
+                  width: 240,
+                ),
+              ],
+            ),
+            if (!ResponsiveLayout.isSmallScreen(context))
               Row(
-                children: <Widget>[
-                  SvgPicture.asset(
-                    '/flutterkaigi-navbar_logo.svg',
-                    width: 240,
-                  ),
-                ],
-              ),
-              if (!ResponsiveLayout.isSmallScreen(context))
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[...navItem()]
-                )
-            ],
-          ),
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[...navItem()])
+          ],
         ),
+      ),
     );
   }
 }
