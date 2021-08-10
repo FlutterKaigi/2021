@@ -38,7 +38,7 @@ class Social extends StatelessWidget {
               width: 60,
             ),
             onPressed: () async {
-              await launch(link['url']);
+              await launch(link['url']!);
             },
           ),
         );

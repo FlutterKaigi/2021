@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  PageController _pageController;
+  late PageController _pageController;
 
   int _screen = 0;
 
