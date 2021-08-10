@@ -21,12 +21,12 @@ const RESOURCES = {
 "assets/NOTICES": "f292b59051bdcbe9b78f9566644110a3",
 "assets/AssetManifest.json": "bbcb783232116d2f8812cbedd8d32adb",
 "assets/discord_logo.svg": "7594b796fb440fa1ef63ca65f6b59c55",
-"index.html": "879616fa17519db76c63a973c1130d83",
-"/": "879616fa17519db76c63a973c1130d83",
+"index.html": "2c878ba555545018bb7af5fde98c647c",
+"/": "2c878ba555545018bb7af5fde98c647c",
 "manifest.json": "520f50eaa4624c08560716f89e01cfad",
 "main.dart.js": "72cac3032ae363642c8e6c3d30d60a71",
 "version.json": "a57d15030372c307522da8043a9c566c",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"favicon.png": "5824467873257165c5c70fa4046d44e2",
 "service-worker.js": "8e80dc880b1e22a2e73ff409d4b1d33e"
 };
 
