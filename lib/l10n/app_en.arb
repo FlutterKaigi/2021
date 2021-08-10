@@ -1,4 +1,8 @@
 {
+    "home": "Home",
+    "event": "Event",
+    "tweet": "Tweet",
+    "letsTweet": "Let's tweet as #FlutterKaigi !",
     "codeOfConduct": "Code of Conduct",
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us"
