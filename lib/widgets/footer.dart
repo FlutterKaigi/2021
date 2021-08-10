@@ -74,7 +74,7 @@ class Footer extends StatelessWidget {
           const Padding(
             padding: const EdgeInsets.all(8),
             child: Text(
-              '©︎ 2021 Flutter Japan User Group',
+              '©︎ 2021 FlutterKaigi 実行委員会',
               style: TextStyle(color: Colors.black87),
             ),
           ),
