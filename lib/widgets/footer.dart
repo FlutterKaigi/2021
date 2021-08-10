@@ -1,6 +1,7 @@
 import 'package:confwebsite2021/utils/responsive_layout.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LinkModel {
@@ -13,18 +14,22 @@ class LinkModel {
 class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context)!;
     final footerLinks = <Map<String, String>>[
       {
-        'name': '行動規範',
-        'url': 'https://flutterkaigi.github.io/flutterkaigi/Code-of-Conduct.ja.html',
+        'name': appLocalizations.codeOfConduct,
+        'url':
+            'https://flutterkaigi.github.io/flutterkaigi/Code-of-Conduct.ja.html',
       },
       {
-        'name': 'プライバシーポリシー',
-        'url': 'https://flutterkaigi.github.io/flutterkaigi/Privacy-Policy.ja.html',
+        'name': appLocalizations.privacyPolicy,
+        'url':
+            'https://flutterkaigi.github.io/flutterkaigi/Privacy-Policy.ja.html',
       },
       {
-        'name': 'お問い合わせ',
-        'url': 'https://docs.google.com/forms/d/e/1FAIpQLSemYPFEWpP8594MWI4k3Nz45RJzMS7pz1ufwtnX4t3V7z2TOw/viewform',
+        'name': appLocalizations.contactUs,
+        'url':
+            'https://docs.google.com/forms/d/e/1FAIpQLSemYPFEWpP8594MWI4k3Nz45RJzMS7pz1ufwtnX4t3V7z2TOw/viewform',
       },
     ];
 
@@ -63,14 +68,12 @@ class Footer extends StatelessWidget {
         children: <Widget>[
           if (!ResponsiveLayout.isSmallScreen(context))
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[...footerItem()]
-            )
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[...footerItem()])
           else
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[...footerItem()]
-            ),
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[...footerItem()]),
           const Padding(
             padding: const EdgeInsets.all(8),
             child: Text(
