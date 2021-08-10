@@ -12,32 +12,50 @@ class LinkModel {
 }
 
 class NavBar extends StatelessWidget {
-  final List<Map<String, String>> navLinks = [
-    {'name': 'Home', 'url': '/'},
-    {'name': 'Event', 'url': 'https://flutter-jp.connpass.com/'},
+  final List<Map<String, dynamic>> navLinks = [
+    {'name': 'Home', 'url': '/', 'twitterIcon': false},
+    {'name': 'Event', 'url': 'https://flutter-jp.connpass.com/', 'twitterIcon': false},
     {
       'name': 'Tweet with #FlutterKaigi',
       'url': 'https://twitter.com/intent/tweet?hashtags=FlutterKaigi',
+      'twitterIcon': true,
     },
   ];
 
   List<Widget> navItem() {
     return navLinks.map((link) {
-      return Padding(
-        padding: const EdgeInsets.only(left: 18),
-        child: ElevatedButton(
-          onPressed: () async {
-            await launch(link['url']!);
-          },
-          style: ElevatedButton.styleFrom(
-            primary: Colors.black,
+      if (link['twitterIcon'] == false)
+        return Padding(
+          padding: const EdgeInsets.only(left: 18),
+          child: ElevatedButton(
+            onPressed: () async {
+              await launch(link['url']!);
+            },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              onPrimary: Colors.black,
+            ),
+            child: Text(
+              link['name']!,
+              style: const TextStyle(fontFamily: 'Montserrat-Bold'),
+            ),
           ),
-          child: Text(
-            link['name']!,
-            style: const TextStyle(fontFamily: 'Montserrat-Bold'),
+        );
+      else
+        return Padding(
+          padding: const EdgeInsets.only(left: 18),
+          child: FloatingActionButton.extended(
+            tooltip: '#FlutterKaigi でツイートしよう！',
+            icon: SvgPicture.asset(
+              '/twitter_white.svg',
+              width: 30,
+            ),
+            label: const Text('ツイート'),
+            onPressed: () async {
+              await launch('https://twitter.com/search?q=%23FlutterKaigi');
+            },
           ),
-        ),
-      );
+        );
     }).toList();
   }
 
