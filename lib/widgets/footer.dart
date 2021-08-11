@@ -36,25 +36,27 @@ class Footer extends StatelessWidget {
     List<Widget> footerItem() {
       return footerLinks.map((link) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 18),
-          child: ElevatedButton(
-            onPressed: () async {
-              await launch(link['url']!);
-            },
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(20),
-              primary: Colors.blueAccent,
-              onPrimary: Colors.black,
-            ),
-            child: Text(
-              link['name']!,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontFamily: 'Montserrat-Bold',
+            padding: const EdgeInsets.symmetric(vertical: 18),
+            child: Tooltip(
+              message: link['url']!,
+              child: ElevatedButton(
+                onPressed: () async {
+                  await launch(link['url']!);
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(20),
+                  primary: Colors.blueAccent,
+                  onPrimary: Colors.black,
+                ),
+                child: Text(
+                  link['name']!,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontFamily: 'Montserrat-Bold',
+                  ),
+                ),
               ),
-            ),
-          ),
-        );
+            ));
       }).toList();
     }
 

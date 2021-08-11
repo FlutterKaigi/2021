@@ -33,6 +33,7 @@ class Social extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 18),
           child: IconButton(
+            tooltip: link['url'],
             icon: SvgPicture.asset(
               '/${link['name']}.svg',
               width: 60,
