@@ -60,6 +60,8 @@ class NavBar extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 onPrimary: Colors.black,
+                enabledMouseCursor: MouseCursor.defer,
+                disabledMouseCursor: MouseCursor.uncontrolled,
               ),
               child: Text(
                 link.name,

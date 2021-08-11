@@ -40,6 +40,7 @@ class Social extends StatelessWidget {
             onPressed: () async {
               await launch(link['url']!);
             },
+            mouseCursor: SystemMouseCursors.click,
           ),
         );
       }).toList();
