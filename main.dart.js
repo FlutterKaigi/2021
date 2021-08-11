@@ -55415,7 +55415,7 @@ L.zf.prototype={
 gGO:function(){return"Home"},
 gGe:function(){return"Event"},
 gIq:function(){return"Tweet"},
-gHi:function(){return"Let's tweet as #FlutterKaigi !"},
+gHi:function(){return"Tweet #FlutterKaigi!"},
 gFn:function(){return"Code of Conduct"},
 gHK:function(){return"Privacy Policy"},
 gFx:function(){return"Contact Us"}}
