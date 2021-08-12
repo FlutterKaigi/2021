@@ -29,6 +29,7 @@ class NavBar extends StatelessWidget {
       _LinkModel(name: appLocalizations.home, url: '/'),
       _LinkModel(
         name: appLocalizations.event,
+        tooltip: 'https://flutter-jp.connpass.com/',
         url: 'https://flutter-jp.connpass.com/',
         linkNewTab: true,
       ),
@@ -48,26 +49,48 @@ class NavBar extends StatelessWidget {
         for (final link in navLinks) ...[
           const SizedBox(width: 18),
           if (link.icon == null)
-            ElevatedButton(
-              onPressed: () async {
-                await launch(
-                  link.url,
-                  webOnlyWindowName: link.linkNewTab == true
-                    ? '_blank'
-                    : '_self',
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black,
-                enabledMouseCursor: MouseCursor.defer,
-                disabledMouseCursor: MouseCursor.uncontrolled,
-              ),
-              child: Text(
-                link.name,
-                style: const TextStyle(fontFamily: 'Montserrat-Bold'),
-              ),
-            )
+            if (link.tooltip != null)
+              Tooltip(
+                  message: link.tooltip ?? '',
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await launch(
+                        link.url,
+                        webOnlyWindowName:
+                            link.linkNewTab == true ? '_blank' : '_self',
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      onPrimary: Colors.black,
+                      enabledMouseCursor: MouseCursor.defer,
+                      disabledMouseCursor: MouseCursor.uncontrolled,
+                    ),
+                    child: Text(
+                      link.name,
+                      style: const TextStyle(fontFamily: 'Montserrat-Bold'),
+                    ),
+                  ))
+            else
+              ElevatedButton(
+                onPressed: () async {
+                  await launch(
+                    link.url,
+                    webOnlyWindowName:
+                        link.linkNewTab == true ? '_blank' : '_self',
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  onPrimary: Colors.black,
+                  enabledMouseCursor: MouseCursor.defer,
+                  disabledMouseCursor: MouseCursor.uncontrolled,
+                ),
+                child: Text(
+                  link.name,
+                  style: const TextStyle(fontFamily: 'Montserrat-Bold'),
+                ),
+              )
           else
             FloatingActionButton.extended(
               tooltip: link.tooltip,
@@ -76,6 +99,7 @@ class NavBar extends StatelessWidget {
               onPressed: () async {
                 await launch(link.url);
               },
+              mouseCursor: SystemMouseCursors.click,
             ),
         ]
       ];
