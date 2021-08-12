@@ -21,7 +21,7 @@ jobs:
           flutter build web
 
       - name: Deploy
-        if: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTERKAIGI }} != ''
+        if: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUTTERKAIGI != '' }}
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
