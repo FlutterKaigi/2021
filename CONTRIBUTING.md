@@ -6,7 +6,7 @@ We look forward to your contribution!
 
 ### How to find a task
 
-I'm using GitHub Issue for task management. Find the Issue you want to contribute here. Pull Requests without issues are fine. In that case, please provide details such as the reason, cause, and solution in the Pull Request.
+We are using GitHub Issue for task management. Please find the Issue you want to contribute here. You can also make Pull Requests without relation to any issues. In this case, please provide details such as the reason, cause, and solution in the Pull Request.
 
 ### How to get started with a contribution
 
