@@ -48,7 +48,6 @@ class Footer extends StatelessWidget {
                   primary: Colors.blueAccent,
                   onPrimary: Colors.black,
                   enabledMouseCursor: MouseCursor.defer,
-                  disabledMouseCursor: SystemMouseCursors.basic,
                 ),
                 child: Text(
                   link['name']!,
