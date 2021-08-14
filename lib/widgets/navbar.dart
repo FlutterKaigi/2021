@@ -63,6 +63,7 @@ class NavBar extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
                       onPrimary: Colors.black,
+                      enabledMouseCursor: MouseCursor.defer,
                     ),
                     child: Text(
                       link.name,
@@ -81,6 +82,7 @@ class NavBar extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
                   onPrimary: Colors.black,
+                  enabledMouseCursor: MouseCursor.defer,
                 ),
                 child: Text(
                   link.name,
@@ -95,6 +97,7 @@ class NavBar extends StatelessWidget {
               onPressed: () async {
                 await launch(link.url);
               },
+              mouseCursor: SystemMouseCursors.click,
             ),
         ]
       ];

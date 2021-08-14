@@ -47,6 +47,7 @@ class Footer extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   primary: Colors.blueAccent,
                   onPrimary: Colors.black,
+                  enabledMouseCursor: MouseCursor.defer,
                 ),
                 child: Text(
                   link['name']!,
