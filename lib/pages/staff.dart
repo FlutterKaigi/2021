@@ -19,7 +19,6 @@ class StaffPage extends StatelessWidget {
         title: Text(appLocalizations.staff),
       ),
       body: ResponsiveLayoutBuilder(builder: (context, layout, width) {
-        print('layout: ${layout}, width:${width}');
         return Container(
           alignment: Alignment.topCenter,
           child: GridView.extent(
@@ -63,7 +62,7 @@ class StaffItem extends StatelessWidget {
 
     final image = (photo.isNotEmpty && validUrl(photo)
         ? NetworkImage(photo)
-        : const Svg(Assets.flutterkaigiLog)) as ImageProvider;
+        : const Svg(Assets.flutterkaigiLogo)) as ImageProvider;
 
     return InkWell(
       onTap: () async {

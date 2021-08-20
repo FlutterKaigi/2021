@@ -1,4 +1,5 @@
 import 'package:confwebsite2021/router/index.dart';
+import 'package:confwebsite2021/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -12,10 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlutterKaigi 2021',
-      theme: ThemeData(
-        fontFamily: 'Montserrat',
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.theme,
       onGenerateRoute: buildRouters,
       initialRoute: '/',
       localizationsDelegates: AppLocalizations.localizationsDelegates,

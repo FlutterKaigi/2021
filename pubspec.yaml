@@ -18,6 +18,7 @@ dependencies:
   flutter_svg: ^0.22.0
   transparent_image: ^2.0.0
   flutter_svg_provider: ^0.1.10
+  gap: ^2.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,139 +1,188 @@
+import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
-import 'package:confwebsite2021/widgets/navbar.dart';
 import 'package:confwebsite2021/widgets/social.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+enum MenuItem { event, tweet }
 
 class TopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color(0xFFF8FBFF),
-        Color(0xFFFCFDFD),
-      ])),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              NavBar(),
-              Body(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Body extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
-      if (layout == ResponsiveLayout.slim) {
-        return SmallBodyChild();
-      }
-      return LargeBodyChild();
+      return Scaffold(
+        appBar: AppBar(
+          title: SvgPicture.asset(
+            Assets.flutterkaigiNavbarLogo,
+            // height: kToolbarHeight,
+            width: 240,
+          ),
+          centerTitle: false,
+          backgroundColor: Colors.white,
+          elevation: 0,
+          actions: buildActions(context, layout, width),
+        ),
+        body: Body(),
+      );
     });
-
-    // return layout(
-    //   largeScreen: LargeBodyChild(),
-    //   smallScreen: SmallBodyChild(),
-    // );
   }
-}
 
-class LargeBodyChild extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          // width: 2000,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.white,
-          child: FractionallySizedBox(
-            widthFactor: .8,
-            child: FractionallySizedBox(
-              alignment: Alignment.center,
-              widthFactor: .6,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SvgPicture.asset(
-                    '/flutterkaigi_log.svg',
-                    width: 320,
+  List<Widget> buildActions(
+      BuildContext context, ResponsiveLayout layout, double width) {
+    if (layout == ResponsiveLayout.slim) {
+      return buildPopupMenuButton(context);
+    } else {
+      return buildActionButtons(context);
+    }
+  }
+
+  List<Widget> buildPopupMenuButton(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context)!;
+    return [
+      PopupMenuButton<MenuItem>(
+        icon: const Icon(Icons.menu, color: Colors.black),
+        onSelected: (MenuItem result) async {
+          String urlString;
+          switch (result) {
+            case MenuItem.event:
+              urlString = 'https://flutter-jp.connpass.com/';
+              break;
+            case MenuItem.tweet:
+              urlString =
+                  'https://twitter.com/intent/tweet?hashtags=FlutterKaigi';
+              break;
+          }
+          await launch(
+            urlString,
+            webOnlyWindowName: '_blank',
+          );
+        },
+        itemBuilder: (BuildContext context) => <PopupMenuEntry<MenuItem>>[
+          PopupMenuItem<MenuItem>(
+            value: MenuItem.event,
+            child: Text(appLocalizations.event),
+          ),
+          PopupMenuItem<MenuItem>(
+            value: MenuItem.tweet,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(32),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgPicture.asset(Assets.twitterWhite, width: 20),
+                  const Gap(8),
+                  Text(
+                    appLocalizations.tweet,
+                    style: Theme.of(context).textTheme.button?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
-                  const Text(
-                    'FlutterKaigi',
-                    style: TextStyle(
-                      fontSize: 64,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 32),
-                  RichText(
-                    text: const TextSpan(
-                      text: '@ONLINE / Winter 2021',
-                      style: TextStyle(
-                        fontSize: 36,
-                        color: Colors.black87,
-                      ),
-                    ),
-                  ),
-                  Social(),
                 ],
               ),
             ),
           ),
-        ),
-        Footer(),
-      ],
-    );
+        ],
+      )
+    ];
   }
-}
 
-class SmallBodyChild extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: [
-      SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(40),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SvgPicture.asset(
-                '/flutterkaigi_log.svg',
-                width: 284,
-              ),
-              const Text(
-                'FlutterKaigi',
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.black87,
-                ),
-              ),
-              RichText(
-                text: const TextSpan(
-                  text: '@ONLINE / Winter 2021',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
-              Social(),
-            ],
+  List<Widget> buildActionButtons(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context)!;
+    return [
+      Container(
+        margin: const EdgeInsets.all(8),
+        child: Tooltip(
+          message: 'https://flutter-jp.connpass.com/',
+          child: TextButton(
+            onPressed: () async {
+              await launch(
+                'https://flutter-jp.connpass.com/',
+                webOnlyWindowName: '_blank',
+              );
+            },
+            child: Text(appLocalizations.event),
           ),
         ),
       ),
-      Footer(),
-    ]);
+      Container(
+        margin: const EdgeInsets.all(8),
+        child: Tooltip(
+          message: appLocalizations.letsTweet,
+          child: ElevatedButton.icon(
+            onPressed: () async {
+              await launch(
+                'https://twitter.com/intent/tweet?hashtags=FlutterKaigi',
+                webOnlyWindowName: '_blank',
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              shape: const StadiumBorder(),
+            ),
+            icon: SvgPicture.asset(Assets.twitterWhite, width: 20),
+            label: Text(appLocalizations.tweet),
+          ),
+        ),
+      ),
+    ];
+  }
+}
+
+class Body extends StatelessWidget {
+  final titleTextStyle = const TextStyle(fontSize: 64);
+  final subtitleTextStyle = const TextStyle(fontSize: 36);
+  final logoWidth = 320;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: ResponsiveLayoutBuilder(builder: (context, layout, width) {
+        final sizeFactor = (layout == ResponsiveLayout.slim) ? 0.6 : 1.0;
+
+        return Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                children: [
+                  SvgPicture.asset(
+                    Assets.flutterkaigiLogo,
+                    width: logoWidth * sizeFactor,
+                  ),
+                  FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      'FlutterKaigi',
+                      style: titleTextStyle.apply(fontSizeFactor: sizeFactor),
+                    ),
+                  ),
+                  Gap(32 * sizeFactor),
+                  FittedBox(
+                    fit: BoxFit.contain,
+                    child: Text(
+                      '@ONLINE / Winter 2021',
+                      style:
+                          subtitleTextStyle.apply(fontSizeFactor: sizeFactor),
+                    ),
+                  ),
+                  const Gap(16),
+                  Social(),
+                ],
+              ),
+            ),
+            Footer(),
+          ],
+        );
+      }),
+    );
   }
 }

@@ -30,29 +30,23 @@ class Social extends StatelessWidget {
 
     List<Widget> socialItem() {
       return socialLinks.map((link) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 18),
-          child: IconButton(
-            tooltip: link['url'],
-            icon: SvgPicture.asset(
-              '/${link['name']}.svg',
-              width: 60,
-            ),
-            onPressed: () async {
-              await launch(link['url']!);
-            },
-            mouseCursor: SystemMouseCursors.click,
+        return IconButton(
+          tooltip: link['url'],
+          icon: SvgPicture.asset(
+            '/${link['name']}.svg',
+            width: 60,
           ),
+          onPressed: () async {
+            await launch(link['url']!);
+          },
+          mouseCursor: SystemMouseCursors.click,
         );
       }).toList();
     }
 
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 24),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[...socialItem()],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[...socialItem()],
     );
   }
 }

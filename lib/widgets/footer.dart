@@ -3,14 +3,8 @@ import 'package:confwebsite2021/router/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-class LinkModel {
-  LinkModel(this.name, this.url);
-
-  final String name;
-  final String url;
-}
 
 class Footer extends StatelessWidget {
   @override
@@ -34,51 +28,38 @@ class Footer extends StatelessWidget {
       },
     ];
 
-    List<Widget> footerItem() {
-      return footerLinks.map((link) {
-        return _FooterButton(
-            message: link['url']!,
-            text: link['name']!,
-            onPressed: () async {
-              await launch(link['url']!);
-            });
-      }).toList()
-        ..add(
-          _FooterButton(
-              message: appLocalizations.staff,
-              text: appLocalizations.staff,
-              onPressed: () {
-                Navigator.of(context).pushNamed(staffRoute().settings.name!);
-              }),
-        );
-    }
+    final footerItem = footerLinks.map((link) {
+      return _FooterButton(
+          message: link['url']!,
+          text: link['name']!,
+          onPressed: () async {
+            await launch(link['url']!);
+          });
+    }).toList()
+      ..add(
+        _FooterButton(
+            message: appLocalizations.staff,
+            text: appLocalizations.staff,
+            onPressed: () {
+              Navigator.of(context).pushNamed(staffRoute().settings.name!);
+            }),
+      );
 
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
-      return Container(
-        padding: const EdgeInsets.all(18),
-        // width: 500,
-        color: const Color(0xFFF8FBFF),
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            if (layout == ResponsiveLayout.slim)
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[...footerItem()])
-            else
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[...footerItem()]),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                appLocalizations.copyright,
-                style: const TextStyle(color: Colors.black87),
-              ),
-            ),
-          ],
-        ),
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          if (layout == ResponsiveLayout.slim)
+            Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: footerItem)
+          else
+            Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: footerItem),
+          const Gap(8),
+          Text(appLocalizations.copyright),
+        ],
       );
     });
   }
@@ -98,25 +79,18 @@ class _FooterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
-      child: Tooltip(
-        message: message,
+    return Tooltip(
+      message: message,
+      child: Padding(
+        padding: const EdgeInsets.all(8),
         child: ElevatedButton(
           onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(20),
-            primary: Colors.blueAccent,
-            onPrimary: Colors.black,
-            enabledMouseCursor: MouseCursor.defer,
-          ),
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white70,
-              fontFamily: 'Montserrat-Bold',
-            ),
-          ),
+          style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                padding: MaterialStateProperty.resolveWith<EdgeInsets>(
+                  (states) => const EdgeInsets.all(20),
+                ),
+              ),
+          child: Text(text),
         ),
       ),
     );

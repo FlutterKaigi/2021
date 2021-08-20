@@ -18,7 +18,7 @@ class Assets {
   static const String discordLogo = 'assets/discord_logo.svg';
   static const String flutterkaigiNavbarLogo =
       'assets/flutterkaigi-navbar_logo.svg';
-  static const String flutterkaigiLog = 'assets/flutterkaigi_log.svg';
+  static const String flutterkaigiLogo = 'assets/flutterkaigi_logo.svg';
   static const String githubLogo = 'assets/github_logo.svg';
   static const $AssetsPhotoGen photo = $AssetsPhotoGen();
   static const String twitterLogo = 'assets/twitter_logo.svg';
