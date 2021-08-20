@@ -1,4 +1,5 @@
-import 'package:confwebsite2021/utils/responsive_layout.dart';
+import 'package:confwebsite2021/responsive_layout_builder.dart';
+import 'package:confwebsite2021/router/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -35,56 +36,88 @@ class Footer extends StatelessWidget {
 
     List<Widget> footerItem() {
       return footerLinks.map((link) {
-        return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 18),
-            child: Tooltip(
-              message: link['url']!,
-              child: ElevatedButton(
-                onPressed: () async {
-                  await launch(link['url']!);
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(20),
-                  primary: Colors.blueAccent,
-                  onPrimary: Colors.black,
-                  enabledMouseCursor: MouseCursor.defer,
-                ),
-                child: Text(
-                  link['name']!,
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontFamily: 'Montserrat-Bold',
-                  ),
-                ),
-              ),
-            ));
-      }).toList();
+        return _FooterButton(
+            message: link['url']!,
+            text: link['name']!,
+            onPressed: () async {
+              await launch(link['url']!);
+            });
+      }).toList()
+        ..add(
+          _FooterButton(
+              message: appLocalizations.staff,
+              text: appLocalizations.staff,
+              onPressed: () {
+                Navigator.of(context).pushNamed(staffRoute().settings.name!);
+              }),
+        );
     }
 
-    return Container(
-      padding: const EdgeInsets.all(18),
-      width: 500,
-      color: const Color(0xFFF8FBFF),
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          if (!ResponsiveLayout.isSmallScreen(context))
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[...footerItem()])
-          else
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[...footerItem()]),
-          const Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              '©︎ 2021 FlutterKaigi 実行委員会',
-              style: TextStyle(color: Colors.black87),
+    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
+      return Container(
+        padding: const EdgeInsets.all(18),
+        // width: 500,
+        color: const Color(0xFFF8FBFF),
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            if (layout == ResponsiveLayout.slim)
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[...footerItem()])
+            else
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[...footerItem()]),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                appLocalizations.copyright,
+                style: const TextStyle(color: Colors.black87),
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+  }
+}
+
+class _FooterButton extends StatelessWidget {
+  const _FooterButton({
+    Key? key,
+    required this.message,
+    required this.text,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String message;
+  final String text;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
+      child: Tooltip(
+        message: message,
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.all(20),
+            primary: Colors.blueAccent,
+            onPrimary: Colors.black,
+            enabledMouseCursor: MouseCursor.defer,
+          ),
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.white70,
+              fontFamily: 'Montserrat-Bold',
             ),
           ),
-        ],
+        ),
       ),
     );
   }

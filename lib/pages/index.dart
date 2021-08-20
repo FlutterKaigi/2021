@@ -1,6 +1,6 @@
-import 'package:confwebsite2021/utils/responsive_layout.dart';
-import 'package:confwebsite2021/widgets/navbar.dart';
+import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
+import 'package:confwebsite2021/widgets/navbar.dart';
 import 'package:confwebsite2021/widgets/social.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +33,17 @@ class TopPage extends StatelessWidget {
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveLayout(
-      largeScreen: LargeBodyChild(),
-      smallScreen: SmallBodyChild(),
-    );
+    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
+      if (layout == ResponsiveLayout.slim) {
+        return SmallBodyChild();
+      }
+      return LargeBodyChild();
+    });
+
+    // return layout(
+    //   largeScreen: LargeBodyChild(),
+    //   smallScreen: SmallBodyChild(),
+    // );
   }
 }
 
@@ -46,7 +53,7 @@ class LargeBodyChild extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          width: 2000,
+          // width: 2000,
           height: MediaQuery.of(context).size.height,
           color: Colors.white,
           child: FractionallySizedBox(

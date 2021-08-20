@@ -1,4 +1,4 @@
-import 'package:confwebsite2021/utils/responsive_layout.dart';
+import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -103,28 +103,30 @@ class NavBar extends StatelessWidget {
       ];
     }
 
-    return Container(
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                SvgPicture.asset(
-                  '/flutterkaigi-navbar_logo.svg',
-                  width: 240,
-                ),
-              ],
-            ),
-            if (!ResponsiveLayout.isSmallScreen(context))
+    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
+      return Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 38),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[...navItem()])
-          ],
+                children: <Widget>[
+                  SvgPicture.asset(
+                    '/flutterkaigi-navbar_logo.svg',
+                    width: 240,
+                  ),
+                ],
+              ),
+              if (!(layout == ResponsiveLayout.slim))
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[...navItem()])
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

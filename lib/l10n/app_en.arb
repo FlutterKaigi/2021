@@ -5,5 +5,7 @@
     "letsTweet": "Tweet #FlutterKaigi!",
     "codeOfConduct": "Code of Conduct",
     "privacyPolicy": "Privacy Policy",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "staff": "Staff",
+    "copyright" : "© 2021 FlutterKaigi Executive Committee"
 }

@@ -1,11 +1,14 @@
-import 'package:confwebsite2021/router/simple_route.dart';
 import 'package:confwebsite2021/pages/index.dart';
+import 'package:confwebsite2021/pages/staff.dart';
+import 'package:confwebsite2021/router/simple_route.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> buildRouters(RouteSettings settings) {
   switch (settings.name) {
     case '/':
       return defaultRoute();
+    case '/staff':
+      return staffRoute();
     default:
       return defaultRoute();
   }
@@ -14,4 +17,9 @@ Route<dynamic> buildRouters(RouteSettings settings) {
 SimpleRoute defaultRoute() {
   return SimpleRoute(
       name: '/', title: 'FlutterKaigi 2021', builder: (context) => TopPage());
+}
+
+SimpleRoute staffRoute() {
+  return SimpleRoute(
+      name: '/staff', title: 'Staff', builder: (context) => const StaffPage());
 }

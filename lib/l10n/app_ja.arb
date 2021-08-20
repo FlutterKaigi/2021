@@ -5,5 +5,7 @@
     "letsTweet": "#FlutterKaigi でツイートしよう！",
     "codeOfConduct": "行動規範",
     "privacyPolicy": "プライバシーポリシー",
-    "contactUs": "お問い合わせ"
+    "contactUs": "お問い合わせ",
+    "staff": "スタップ",
+    "copyright" : "© 2021 FlutterKaigi 実行委員会"
 }

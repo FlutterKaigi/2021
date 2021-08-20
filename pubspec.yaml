@@ -16,15 +16,20 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   flutter_svg: ^0.22.0
+  transparent_image: ^2.0.0
+  flutter_svg_provider: ^0.1.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono: ^1.11.0+2
   url_launcher: ^6.0.2
+  build_runner:
+  flutter_gen_runner:
 
 flutter:
   uses-material-design: true
   generate: true
   assets:
     - assets/
+    - assets/photo/
