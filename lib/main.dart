@@ -1,5 +1,5 @@
-import 'package:confwebsite2021/pages/index.dart';
 import 'package:confwebsite2021/router/index.dart';
+import 'package:confwebsite2021/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -13,57 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlutterKaigi 2021',
-      theme: ThemeData(
-        fontFamily: 'Montserrat',
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+      theme: AppTheme.theme,
       onGenerateRoute: buildRouters,
       initialRoute: '/',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  late PageController _pageController;
-
-  int _screen = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(
-      initialPage: _screen,
-    );
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
-            setState(() {
-              _screen = index;
-            });
-          },
-          children: [
-            TopPage(),
-          ]),
     );
   }
 }
