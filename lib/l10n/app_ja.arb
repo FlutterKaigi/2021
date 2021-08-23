@@ -7,5 +7,7 @@
     "privacyPolicy": "プライバシーポリシー",
     "contactUs": "お問い合わせ",
     "staff": "スタッフ",
+    "alphabeticalOrder": "アルファベット順",
+    "displayAlphabeticalOrder": "アルファベット順で表示しています",
     "copyright" : "© 2021 FlutterKaigi 実行委員会"
 }
