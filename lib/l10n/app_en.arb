@@ -7,5 +7,7 @@
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us",
     "staff": "Staff",
+    "alphabeticalOrder": "Alphabetical order",
+    "displayAlphabeticalOrder": "Displayed in alphabetical order",
     "copyright" : "© 2021 FlutterKaigi Executive Committee"
 }

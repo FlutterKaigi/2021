@@ -20,24 +20,44 @@ class StaffPage extends StatelessWidget {
       ),
       body: ResponsiveLayoutBuilder(builder: (context, layout, width) {
         return Container(
-          alignment: Alignment.topCenter,
-          child: GridView.extent(
-            primary: false,
-            padding: const EdgeInsets.all(24),
-            crossAxisSpacing: 24,
-            mainAxisSpacing: 24,
-            maxCrossAxisExtent: 100,
-            children: kStaffList
-                .map(
-                  (e) => StaffItem(
-                    name: e['name'] ?? '',
-                    photo: e['photo'] ?? '',
-                    url: e['url'] ?? '',
+            alignment: Alignment.topCenter,
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: Tooltip(
+                      message: appLocalizations.displayAlphabeticalOrder,
+                      child: Text(
+                        appLocalizations.alphabeticalOrder,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
-                )
-                .toList(),
-          ),
-        );
+                ),
+                Expanded(
+                  child: GridView.extent(
+                    primary: false,
+                    padding: const EdgeInsets.all(24),
+                    crossAxisSpacing: 24,
+                    mainAxisSpacing: 24,
+                    maxCrossAxisExtent: 100,
+                    children: kStaffList
+                        .map(
+                          (e) => StaffItem(
+                            name: e['name'] ?? '',
+                            photo: e['photo'] ?? '',
+                            url: e['url'] ?? '',
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ],
+            ));
       }),
     );
   }
