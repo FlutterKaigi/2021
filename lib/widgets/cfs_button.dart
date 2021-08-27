@@ -15,7 +15,7 @@ class CfsButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () async {
             await launch(
-              '',
+              'https://fortee.jp/flutterkaigi-2021/speaker/proposal/cfp',
               webOnlyWindowName: '_blank',
             );
           },
