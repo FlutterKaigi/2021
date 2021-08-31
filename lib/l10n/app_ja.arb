@@ -3,6 +3,8 @@
     "event": "イベント",
     "tweet": "ツイート",
     "letsTweet": "#FlutterKaigi でツイートしよう！",
+    "proposalSubmissionStart": "トーク募集開始！",
+    "submitProposal": "トークを提出する",
     "codeOfConduct": "行動規範",
     "privacyPolicy": "プライバシーポリシー",
     "contactUs": "お問い合わせ",

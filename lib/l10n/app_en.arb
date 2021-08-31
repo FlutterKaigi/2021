@@ -3,6 +3,8 @@
     "event": "Event",
     "tweet": "Tweet",
     "letsTweet": "Tweet #FlutterKaigi!",
+    "proposalSubmissionStart": "Talk Submission Start!",
+    "submitProposal": "Submit Talk Proposal",
     "codeOfConduct": "Code of Conduct",
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us",
