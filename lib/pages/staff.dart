@@ -13,6 +13,7 @@ class StaffPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context)!;
+    kStaffList.sort((a, b) => (a['name'] ?? '').compareTo(b['name'] ?? ''));
 
     return Scaffold(
       appBar: AppBar(
