@@ -36,7 +36,7 @@ final kStaffList = [
     'url': 'https://twitter.com/highballegg',
   },
   {
-    'name': '松村',
+    'name': 'm.kosuke',
     'photo':
         'https://pbs.twimg.com/profile_images/949876562035290112/WHda0iOA_400x400.jpg',
     'url': 'https://twitter.com/kosuke_mtm',
@@ -51,7 +51,7 @@ final kStaffList = [
     'name': 'robo',
     'photo':
         'https://pbs.twimg.com/profile_images/1419301002/robo_2_400x400.png',
-    'url': 'https://twitter.com/kikuchy',
+    'url': 'https://twitter.com/cch_robo',
   },
   {
     'name': 'ストクロ',
