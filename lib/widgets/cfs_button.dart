@@ -23,7 +23,7 @@ class CfsButton extends StatelessWidget {
             shape: const StadiumBorder(),
             padding: const EdgeInsets.all(24),
             primary: Colors.deepOrange,
-            onPrimary: Colors.white54,
+            onPrimary: Colors.black87,
           ),
           child: Text(
             appLocalizations.proposalSubmissionStart,
