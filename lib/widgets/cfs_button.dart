@@ -29,7 +29,6 @@ class CfsButton extends StatelessWidget {
             appLocalizations.proposalSubmissionStart,
             style: const TextStyle(
               color: Colors.white,
-              backgroundColor: Colors.deepOrange,
               fontSize: 20,
             ),
           ),
