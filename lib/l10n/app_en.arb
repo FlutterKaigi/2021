@@ -1,15 +1,14 @@
 {
     "home": "Home",
-    "event": "Event",
+    "event": "Events",
     "tweet": "Tweet",
     "letsTweet": "Tweet #FlutterKaigi!",
-    "proposalSubmissionStart": "Talk Submission Start!",
-    "submitProposal": "Submit Talk Proposal",
+    "proposalSubmissionStart": "Talk Submission Has Started!",
+    "submitProposal": "Submit Talk Proposals",
     "codeOfConduct": "Code of Conduct",
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us",
     "staff": "Staff",
-    "alphabeticalOrder": "Alphabetical order",
-    "displayAlphabeticalOrder": "Displayed in alphabetical order",
+    "alphabeticalOrder": "listed alphabetically",
     "copyright" : "© 2021 FlutterKaigi Executive Committee"
 }
