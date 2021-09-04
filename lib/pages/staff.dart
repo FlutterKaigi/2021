@@ -29,7 +29,7 @@ class StaffPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(4),
                     child: Tooltip(
-                      message: appLocalizations.displayAlphabeticalOrder,
+                      message: appLocalizations.alphabeticalOrder,
                       child: Text(
                         appLocalizations.alphabeticalOrder,
                         style: const TextStyle(
