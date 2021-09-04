@@ -18,9 +18,8 @@ final kStaffList = [
     'url': 'https://twitter.com/SKKbySSK_TC',
   },
   {
-    'name': 'しかない',
-    'photo':
-        'https://pbs.twimg.com/profile_images/1428242772146876417/bYq7vead_400x400.jpg',
+    'name': 'y-shika',
+    'photo': 'https://avatars.githubusercontent.com/u/34807109?v=4',
     'url': 'https://twitter.com/y_sh1ka',
   },
   {
