@@ -41,7 +41,7 @@ final kStaffList = [
     'url': 'https://twitter.com/kosuke_mtm',
   },
   {
-    'name': 'きくっちー',
+    'name': 'kikuchy',
     'photo':
         'https://pbs.twimg.com/profile_images/481267728/icon_128_400x400.png',
     'url': 'https://twitter.com/kikuchy',
