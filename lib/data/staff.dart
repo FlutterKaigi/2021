@@ -29,9 +29,9 @@ final kStaffList = [
     'url': 'https://twitter.com/wasabeef_jp',
   },
   {
-    'name': 'ソエジマ',
+    'name': 'ssoejima',
     'photo':
-        'https://pbs.twimg.com/profile_images/827161711849271297/gREk73eT_400x400.jpg',
+        'https://pbs.twimg.com/profile_images/1433810816633999362/IYkUyXNP_400x400.jpg',
     'url': 'https://twitter.com/highballegg',
   },
   {
