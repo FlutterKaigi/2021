@@ -170,7 +170,7 @@ class Body extends StatelessWidget {
                   FittedBox(
                     fit: BoxFit.contain,
                     child: Text(
-                      '@ONLINE / Winter 2021',
+                      '@ONLINE / November 29-30, 2021',
                       style:
                           subtitleTextStyle.apply(fontSizeFactor: sizeFactor),
                     ),
