@@ -37361,7 +37361,7 @@ E.B_.prototype={
 O:function(a,b){return E.ama(new E.kM(new E.TP(this),null),null)}}
 E.TP.prototype={
 $3:function(a,b,c){var s=null,r=b===C.fZ?0.6:1,q=t.E
-return T.tl(H.a([M.hy(s,T.tl(H.a([G.KE("assets/flutterkaigi_logo.svg",320*r),T.afY(C.aw,L.fs("FlutterKaigi",C.W8.GR(r),s,s),C.L,C.el),new Q.oK(32*r,s),T.afY(C.aw,L.fs("@ONLINE / Winter 2021",C.W9.GR(r),s,s),C.L,C.el),C.kI,new Q.Bh(s),C.kI,new X.Kj(s)],q),C.bR),s,s,s,s,C.yy,s),new N.F_(s)],q),C.bR)},
+return T.tl(H.a([M.hy(s,T.tl(H.a([G.KE("assets/flutterkaigi_logo.svg",320*r),T.afY(C.aw,L.fs("FlutterKaigi",C.W8.GR(r),s,s),C.L,C.el),new Q.oK(32*r,s),T.afY(C.aw,L.fs("@ONLINE / November 29-30, 2021",C.W9.GR(r),s,s),C.L,C.el),C.kI,new Q.Bh(s),C.kI,new X.Kj(s)],q),C.bR),s,s,s,s,C.yy,s),new N.F_(s)],q),C.bR)},
 $C:"$3",
 $R:3,
 $S:114}
