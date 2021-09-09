@@ -1,8 +1,8 @@
 import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
+import 'package:confwebsite2021/widgets/cfs_button.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
 import 'package:confwebsite2021/widgets/social.dart';
-import 'package:confwebsite2021/widgets/cfs_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,6 +12,8 @@ import 'package:url_launcher/url_launcher.dart';
 enum MenuItem { event, tweet }
 
 class TopPage extends StatelessWidget {
+  const TopPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
@@ -27,7 +29,7 @@ class TopPage extends StatelessWidget {
           elevation: 0,
           actions: buildActions(context, layout, width),
         ),
-        body: Body(),
+        body: const Body(),
       );
     });
   }
@@ -139,9 +141,11 @@ class TopPage extends StatelessWidget {
 }
 
 class Body extends StatelessWidget {
-  final titleTextStyle = const TextStyle(fontSize: 64);
-  final subtitleTextStyle = const TextStyle(fontSize: 36);
-  final logoWidth = 320;
+  const Body({Key? key}) : super(key: key);
+
+  TextStyle get titleTextStyle => const TextStyle(fontSize: 64);
+  TextStyle get subtitleTextStyle => const TextStyle(fontSize: 36);
+  int get logoWidth => 320;
 
   @override
   Widget build(BuildContext context) {
@@ -176,13 +180,13 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   const Gap(32),
-                  CfsButton(),
+                  const CfsButton(),
                   const Gap(32),
-                  Social(),
+                  const Social(),
                 ],
               ),
             ),
-            Footer(),
+            const Footer(),
           ],
         );
       }),

@@ -11,6 +11,8 @@ class LinkModel {
 }
 
 class Social extends StatelessWidget {
+  const Social({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final socialLinks = <Map<String, String>>[
