@@ -23,9 +23,9 @@ dependencies:
 dev_dependencies:
   build_runner:
   flutter_gen_runner:
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
-  pedantic_mono: ^1.14.0
   url_launcher: ^6.0.2
 
 flutter:
