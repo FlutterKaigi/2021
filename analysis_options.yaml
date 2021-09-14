@@ -1,5 +1,4 @@
-# https://pub.dev/packages/pedantic_mono
-include: package:pedantic_mono/analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   strong-mode:

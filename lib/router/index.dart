@@ -16,7 +16,7 @@ Route<dynamic> buildRouters(RouteSettings settings) {
 
 SimpleRoute defaultRoute() {
   return SimpleRoute(
-      name: '/', title: 'FlutterKaigi 2021', builder: (context) => TopPage());
+      name: '/', title: 'FlutterKaigi 2021', builder: (context) => const TopPage());
 }
 
 SimpleRoute staffRoute() {
