@@ -1,5 +1,6 @@
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/router/index.dart';
+import 'package:confwebsite2021/widgets/license_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -59,6 +60,8 @@ class Footer extends StatelessWidget {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: footerItem),
+          const Gap(8),
+          const LicenseButton(),
           const Gap(8),
           Text(appLocalizations.copyright),
         ],
