@@ -10,5 +10,6 @@
     "contactUs": "Contact Us",
     "staff": "Staff",
     "alphabeticalOrder": "listed alphabetically",
-    "copyright" : "© 2021 FlutterKaigi Executive Committee"
+    "copyright" : "© 2021 FlutterKaigi Executive Committee",
+    "showLicense": "Show License"
 }
