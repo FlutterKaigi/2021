@@ -33,7 +33,7 @@ class Footer extends StatelessWidget {
 
     final footerItem = footerLinks.map((link) {
       return _FooterButton(
-          message: link['url']!,
+          message: link['name']!,
           text: link['name']!,
           onPressed: () async {
             await launch(link['url']!);
@@ -54,8 +54,24 @@ class Footer extends StatelessWidget {
         children: <Widget>[
           if (layout == ResponsiveLayout.slim)
             Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: footerItem)
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      footerItem[0],
+                      footerItem[1],
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      footerItem[2],
+                      footerItem[3],
+                    ],
+                  ),
+                ],
+            )
           else
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -88,14 +104,27 @@ class _FooterButton extends StatelessWidget {
       message: message,
       child: Padding(
         padding: const EdgeInsets.all(8),
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
-                padding: MaterialStateProperty.resolveWith<EdgeInsets>(
-                  (states) => const EdgeInsets.all(20),
-                ),
+        child: SizedBox(
+          width: 160,
+          height: 40,
+          child: ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.all(20),
+              onPrimary: Colors.black87,
+              textStyle: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.normal,
               ),
-          child: Text(text),
+            ),
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+              ),
+            ),
+          ),
         ),
       ),
     );
