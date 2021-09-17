@@ -1,7 +1,7 @@
-import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/router/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -48,39 +48,26 @@ class Footer extends StatelessWidget {
       )
       ..add(
         _FooterButton(
-            message: appLocalizations.license,
-            text: appLocalizations.license,
+            message: appLocalizations.licenses,
+            text: appLocalizations.licenses,
             onPressed: () {
               showLicensePage(
                 context: context,
               );
             }),
       );
-    var size = MediaQuery.of(context).size;
-    final double itemWidth = size.width / 2;
-    const double itemHeight = 80.0;
 
-    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
       return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          if (layout == ResponsiveLayout.slim)
-            GridView.count(
-              primary: false,
-              padding: const EdgeInsets.all(2),
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              childAspectRatio: (itemWidth / itemHeight),
-              children: footerItem)
-          else
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: footerItem),
-          const Gap(8),
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: footerItem,
+          ),
           Text(appLocalizations.copyright),
+          const Gap(32),
         ],
       );
-    });
   }
 }
 
@@ -100,18 +87,11 @@ class _FooterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message: message,
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: SizedBox(
-          width: 120,
-          height: 40,
-          child: TextButton(
-            onPressed: onPressed,
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-            ),
-          ),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
         ),
       ),
     );

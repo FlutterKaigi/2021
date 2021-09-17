@@ -151,53 +151,62 @@ class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
   TextStyle get titleTextStyle => const TextStyle(fontSize: 64);
+
   TextStyle get subtitleTextStyle => const TextStyle(fontSize: 36);
+
   int get logoWidth => 320;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: ResponsiveLayoutBuilder(builder: (context, layout, width) {
-        final sizeFactor = (layout == ResponsiveLayout.slim) ? 0.6 : 1.0;
+    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
+      final sizeFactor = (layout == ResponsiveLayout.slim) ? 0.6 : 1.0;
 
-        return Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Column(
-                children: [
-                  SvgPicture.asset(
-                    Assets.flutterkaigiLogo,
-                    width: logoWidth * sizeFactor,
+      return CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        Assets.flutterkaigiLogo,
+                        width: logoWidth * sizeFactor,
+                      ),
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Text(
+                          'FlutterKaigi',
+                          style:
+                              titleTextStyle.apply(fontSizeFactor: sizeFactor),
+                        ),
+                      ),
+                      Gap(32 * sizeFactor),
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Text(
+                          '@ONLINE / November 29-30, 2021',
+                          style: subtitleTextStyle.apply(
+                              fontSizeFactor: sizeFactor),
+                        ),
+                      ),
+                      const Gap(32),
+                      const CfsButton(),
+                      const Gap(32),
+                      const Social(),
+                    ],
                   ),
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text(
-                      'FlutterKaigi',
-                      style: titleTextStyle.apply(fontSizeFactor: sizeFactor),
-                    ),
-                  ),
-                  Gap(32 * sizeFactor),
-                  FittedBox(
-                    fit: BoxFit.contain,
-                    child: Text(
-                      '@ONLINE / November 29-30, 2021',
-                      style:
-                          subtitleTextStyle.apply(fontSizeFactor: sizeFactor),
-                    ),
-                  ),
-                  const Gap(32),
-                  const CfsButton(),
-                  const Gap(32),
-                  const Social(),
-                ],
-              ),
+                ),
+                const Spacer(),
+                const Footer(),
+              ],
             ),
-            const Footer(),
-          ],
-        );
-      }),
-    );
+          )
+        ],
+      );
+    });
   }
 }
 
