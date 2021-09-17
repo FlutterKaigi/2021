@@ -47,31 +47,22 @@ class Footer extends StatelessWidget {
               Navigator.of(context).pushNamed(staffRoute().settings.name!);
             }),
       );
+    var size = MediaQuery.of(context).size;
+    final double itemWidth = size.width / 2;
+    const double itemHeight = 60.0;
 
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           if (layout == ResponsiveLayout.slim)
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      footerItem[0],
-                      footerItem[1],
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      footerItem[2],
-                      footerItem[3],
-                    ],
-                  ),
-                ],
-            )
+            GridView.count(
+              primary: false,
+              padding: const EdgeInsets.all(4),
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              childAspectRatio: (itemWidth / itemHeight),
+              children: footerItem)
           else
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
