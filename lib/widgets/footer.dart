@@ -58,7 +58,7 @@ class Footer extends StatelessWidget {
           if (layout == ResponsiveLayout.slim)
             GridView.count(
               primary: false,
-              padding: const EdgeInsets.all(4),
+              padding: const EdgeInsets.all(2),
               crossAxisCount: 2,
               shrinkWrap: true,
               childAspectRatio: (itemWidth / itemHeight),
