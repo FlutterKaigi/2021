@@ -48,8 +48,8 @@ class Footer extends StatelessWidget {
       )
       ..add(
         _FooterButton(
-            message: appLocalizations.showLicense,
-            text: appLocalizations.showLicense,
+            message: appLocalizations.license,
+            text: appLocalizations.license,
             onPressed: () {
               showLicensePage(
                 context: context,
@@ -103,11 +103,14 @@ class _FooterButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: SizedBox(
-          width: 160,
+          width: 120,
           height: 40,
           child: TextButton(
             onPressed: onPressed,
-            child: Text(text),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
