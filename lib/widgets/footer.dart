@@ -1,6 +1,5 @@
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/router/index.dart';
-import 'package:confwebsite2021/widgets/license_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -46,6 +45,16 @@ class Footer extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed(staffRoute().settings.name!);
             }),
+      )
+      ..add(
+        _FooterButton(
+            message: appLocalizations.showLicense,
+            text: appLocalizations.showLicense,
+            onPressed: () {
+              showLicensePage(
+                context: context,
+              );
+            }),
       );
     var size = MediaQuery.of(context).size;
     final double itemWidth = size.width / 2;
@@ -67,8 +76,6 @@ class Footer extends StatelessWidget {
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: footerItem),
-          const Gap(8),
-          const LicenseButton(),
           const Gap(8),
           Text(appLocalizations.copyright),
         ],
@@ -98,23 +105,9 @@ class _FooterButton extends StatelessWidget {
         child: SizedBox(
           width: 160,
           height: 40,
-          child: ElevatedButton(
+          child: TextButton(
             onPressed: onPressed,
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(20),
-              onPrimary: Colors.black87,
-              textStyle: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            child: Text(
-              text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 10,
-              ),
-            ),
+            child: Text(text),
           ),
         ),
       ),
