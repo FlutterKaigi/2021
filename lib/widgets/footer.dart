@@ -49,7 +49,7 @@ class Footer extends StatelessWidget {
       );
     var size = MediaQuery.of(context).size;
     final double itemWidth = size.width / 2;
-    const double itemHeight = 60.0;
+    const double itemHeight = 120.0;
 
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
       return Column(
