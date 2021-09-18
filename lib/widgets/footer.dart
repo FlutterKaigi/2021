@@ -1,6 +1,5 @@
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/router/index.dart';
-import 'package:confwebsite2021/widgets/license_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -46,6 +45,16 @@ class Footer extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed(staffRoute().settings.name!);
             }),
+      )
+      ..add(
+        _FooterButton(
+            message: appLocalizations.licenses,
+            text: appLocalizations.licenses,
+            onPressed: () {
+              showLicensePage(
+                context: context,
+              );
+            }),
       );
 
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
@@ -53,15 +62,13 @@ class Footer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           if (layout == ResponsiveLayout.slim)
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: footerItem)
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: footerItem)
           else
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: footerItem),
-          const Gap(8),
-          const LicenseButton(),
           const Gap(8),
           Text(appLocalizations.copyright),
         ],
@@ -88,14 +95,16 @@ class _FooterButton extends StatelessWidget {
       message: message,
       child: Padding(
         padding: const EdgeInsets.all(8),
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
-                padding: MaterialStateProperty.resolveWith<EdgeInsets>(
-                  (states) => const EdgeInsets.all(20),
-                ),
-              ),
-          child: Text(text),
+        child: SizedBox(
+          width: 120,
+          height: 40,
+          child: TextButton(
+            onPressed: onPressed,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ),
     );
