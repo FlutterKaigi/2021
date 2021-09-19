@@ -10,9 +10,10 @@ class SimpleRoute extends PageRoute<dynamic> {
     required this.title,
     required this.builder,
   }) : super(
-      settings: RouteSettings(
-        name: name,
-      ));
+          settings: RouteSettings(
+            name: name,
+          ),
+        );
 
   @override
   Color get barrierColor => Colors.white;
@@ -21,7 +22,7 @@ class SimpleRoute extends PageRoute<dynamic> {
   String get barrierLabel => 'Dismiss';
 
   @override
-  bool get maintainState => true;
+  bool get maintainState => false;
 
   @override
   Duration get transitionDuration => const Duration(milliseconds: 250);
