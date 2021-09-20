@@ -8,7 +8,7 @@ final kStaffList = [
   {
     'name': 'yagitatsu',
     'photo':
-        'https://pbs.twimg.com/profile_images/1413823235221721089/KMXhIfWU_400x400.jpg',
+        'https://pbs.twimg.com/profile_images/1435550945157337091/GNxormVJ_400x400.jpg',
     'url': 'https://twitter.com/yagitatsu3',
   },
   {
