@@ -92,6 +92,7 @@ class StaffItem extends StatelessWidget {
         }
       },
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 64,
@@ -104,7 +105,7 @@ class StaffItem extends StatelessWidget {
               ),
             ),
           ),
-          Text(name),
+          FittedBox(child: Text(name)),
         ],
       ),
     );
