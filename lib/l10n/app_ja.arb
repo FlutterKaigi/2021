@@ -12,5 +12,5 @@
     "alphabeticalOrder": "アルファベット順",
     "displayAlphabeticalOrder": "アルファベット順で表示しています",
     "copyright" : "© 2021 FlutterKaigi 実行委員会",
-    "showLicense": "ライセンスを確認する"
+    "licenses": "ライセンス"
 }

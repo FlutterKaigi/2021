@@ -1,8 +1,7 @@
-import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/router/index.dart';
-import 'package:confwebsite2021/widgets/license_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,7 +32,7 @@ class Footer extends StatelessWidget {
 
     final footerItem = footerLinks.map((link) {
       return _FooterButton(
-          message: link['url']!,
+          message: link['name']!,
           text: link['name']!,
           onPressed: () async {
             await launch(link['url']!);
@@ -46,27 +45,29 @@ class Footer extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed(staffRoute().settings.name!);
             }),
+      )
+      ..add(
+        _FooterButton(
+            message: appLocalizations.licenses,
+            text: appLocalizations.licenses,
+            onPressed: () {
+              showLicensePage(
+                context: context,
+              );
+            }),
       );
 
-    return ResponsiveLayoutBuilder(builder: (context, layout, width) {
       return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          if (layout == ResponsiveLayout.slim)
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: footerItem)
-          else
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: footerItem),
-          const Gap(8),
-          const LicenseButton(),
-          const Gap(8),
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: footerItem,
+          ),
           Text(appLocalizations.copyright),
+          const Gap(32),
         ],
       );
-    });
   }
 }
 
@@ -86,16 +87,11 @@ class _FooterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message: message,
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
-                padding: MaterialStateProperty.resolveWith<EdgeInsets>(
-                  (states) => const EdgeInsets.all(20),
-                ),
-              ),
-          child: Text(text),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
         ),
       ),
     );
