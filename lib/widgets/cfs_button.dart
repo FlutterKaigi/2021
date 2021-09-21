@@ -13,22 +13,22 @@ class CfsButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       child: Tooltip(
-        message: appLocalizations.submitProposal,
+        message: appLocalizations.endedSubmitProposal,
         child: ElevatedButton(
           onPressed: () async {
             await launch(
-              'https://fortee.jp/flutterkaigi-2021/speaker/proposal/cfp',
+              'https://fortee.jp/flutterkaigi-2021/proposal',
               webOnlyWindowName: '_blank',
             );
           },
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
             padding: const EdgeInsets.all(24),
-            primary: Colors.deepOrange,
+            primary: Colors.orange,
             onPrimary: Colors.black87,
           ),
           child: Text(
-            appLocalizations.proposalSubmissionStart,
+            appLocalizations.proposalList,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
