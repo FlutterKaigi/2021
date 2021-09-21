@@ -1,11 +1,11 @@
 {
-    "name": "confwebsite2021",
-    "short_name": "confwebsite2021",
+    "name": "FlutterKaigi2021",
+    "short_name": "FlutterKaigi2021",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "FlutterKaigi 2021",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
