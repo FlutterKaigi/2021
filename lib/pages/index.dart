@@ -158,6 +158,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context)!;
+
     return ResponsiveLayoutBuilder(builder: (context, layout, width) {
       final sizeFactor = (layout == ResponsiveLayout.slim) ? 0.6 : 1.0;
 
@@ -194,6 +196,14 @@ class Body extends StatelessWidget {
                       ),
                       const Gap(32),
                       const CfsButton(),
+                      const Gap(16),
+                      FittedBox(
+                        child: Text(
+                          appLocalizations.endedSubmitProposal,
+                          style: subtitleTextStyle.apply(
+                              fontSizeFactor: 0.4),
+                        ),
+                      ),
                       const Gap(32),
                       const Social(),
                     ],
