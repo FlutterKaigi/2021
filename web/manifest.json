@@ -1,11 +1,11 @@
 {
-    "name": "FlutterKaigi2021",
-    "short_name": "FlutterKaigi2021",
+    "name": "FlutterKaigi 2021",
+    "short_name": "FlutterKaigi 2021",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "FlutterKaigi 2021",
+    "description": "2021年、Flutterをメインに扱う、日本で初開催の技術カンファレンス。FlutterやDartの深い知見を持つ開発者によるセッションを多数企画します。",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
