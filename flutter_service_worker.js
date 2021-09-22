@@ -27,7 +27,7 @@ const RESOURCES = {
 "assets/discord_logo.svg": "7594b796fb440fa1ef63ca65f6b59c55",
 "index.html": "ed735b5ea5734c34ba82aaf382dc656a",
 "/": "ed735b5ea5734c34ba82aaf382dc656a",
-"manifest.json": "520f50eaa4624c08560716f89e01cfad",
+"manifest.json": "ee44f2f82e3119433ff6005431927b74",
 "main.dart.js": "c975e7f601370ab5a98bb01e0a1fb037",
 "version.json": "a57d15030372c307522da8043a9c566c",
 "favicon.png": "5824467873257165c5c70fa4046d44e2",
