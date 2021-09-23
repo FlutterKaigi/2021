@@ -28,7 +28,7 @@ const RESOURCES = {
 "index.html": "ed735b5ea5734c34ba82aaf382dc656a",
 "/": "ed735b5ea5734c34ba82aaf382dc656a",
 "manifest.json": "ee44f2f82e3119433ff6005431927b74",
-"main.dart.js": "c975e7f601370ab5a98bb01e0a1fb037",
+"main.dart.js": "3c2390a9a782a5b9849559f638178bcf",
 "version.json": "a57d15030372c307522da8043a9c566c",
 "favicon.png": "5824467873257165c5c70fa4046d44e2",
 "service-worker.js": "8e80dc880b1e22a2e73ff409d4b1d33e"
