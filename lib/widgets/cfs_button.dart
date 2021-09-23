@@ -13,7 +13,7 @@ class CfsButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       child: Tooltip(
-        message: appLocalizations.endedSubmitProposal,
+        message: appLocalizations.showProposals,
         child: ElevatedButton(
           onPressed: () async {
             await launch(
