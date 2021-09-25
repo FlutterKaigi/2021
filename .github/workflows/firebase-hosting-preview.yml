@@ -18,7 +18,7 @@ jobs:
 
       - name: Transpile
         run: |
-          flutter build web
+          flutter build web --web-renderer html
 
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
