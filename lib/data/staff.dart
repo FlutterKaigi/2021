@@ -24,8 +24,7 @@ final kStaffList = [
   },
   {
     'name': 'wasabeef',
-    'photo':
-        'https://pbs.twimg.com/profile_images/1296438644199190528/JmVL-exv_400x400.jpg',
+    'photo': 'https://avatars.githubusercontent.com/u/1833474?v=4',
     'url': 'https://twitter.com/wasabeef_jp',
   },
   {
