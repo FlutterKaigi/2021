@@ -57,17 +57,30 @@ class Footer extends StatelessWidget {
             }),
       );
 
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Wrap(
-            alignment: WrapAlignment.center,
-            children: footerItem,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Wrap(
+          alignment: WrapAlignment.center,
+          children: footerItem,
+        ),
+        Text(appLocalizations.copyright),
+        const Gap(8),
+        FittedBox(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 4,
+              vertical: 0,
+            ),
+            child: Text(
+              appLocalizations.acknowledgements,
+              style: const TextStyle(fontSize: 10),
+            ),
           ),
-          Text(appLocalizations.copyright),
-          const Gap(32),
-        ],
-      );
+        ),
+        const Gap(32),
+      ],
+    );
   }
 }
 
