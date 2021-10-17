@@ -79,4 +79,28 @@
     "mockito",
     "riverpod"
   ],
+
+  "peacock.color": "#03a9f4",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#03a9f4",
+    "activityBar.activeBorder": "#422c74",
+    "activityBar.background": "#03a9f4",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#422c74",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "editorGroup.border": "#03a9f4",
+    "panel.border": "#03a9f4",
+    "sash.hoverBorder": "#03a9f4",
+    "sideBar.border": "#03a9f4",
+    "statusBar.background": "#004c6e",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#03a9f4",
+    "statusBarItem.remoteBackground": "#004c6e",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#004c6e",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#004c6e",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  }
 }
