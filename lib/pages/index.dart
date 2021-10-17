@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/widgets/cfs_button.dart';
+import 'package:confwebsite2021/widgets/connpass_button.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
 import 'package:confwebsite2021/widgets/social.dart';
 import 'package:flutter/material.dart';
@@ -195,13 +196,14 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       const Gap(32),
+                      const ConnpassButton(),
+                      const Gap(16),
                       const CfsButton(),
                       const Gap(16),
                       FittedBox(
                         child: Text(
                           appLocalizations.endedSubmitProposal,
-                          style: subtitleTextStyle.apply(
-                              fontSizeFactor: 0.4),
+                          style: subtitleTextStyle.apply(fontSizeFactor: 0.4),
                         ),
                       ),
                       const Gap(32),
