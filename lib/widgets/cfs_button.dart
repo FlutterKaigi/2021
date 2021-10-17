@@ -13,7 +13,7 @@ class CfsButton extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       child: Tooltip(
-        message: appLocalizations.showTimetable,
+        message: appLocalizations.showSchedule,
         child: ElevatedButton(
           onPressed: () async {
             await launch(
@@ -28,7 +28,7 @@ class CfsButton extends StatelessWidget {
             onPrimary: Colors.black87,
           ),
           child: Text(
-            appLocalizations.timetable,
+            appLocalizations.schedule,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
