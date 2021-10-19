@@ -1,7 +1,5 @@
 import 'package:confwebsite2021/router/index.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -57,17 +55,45 @@ class Footer extends StatelessWidget {
             }),
       );
 
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Wrap(
-            alignment: WrapAlignment.center,
-            children: footerItem,
-          ),
-          Text(appLocalizations.copyright),
-          const Gap(32),
-        ],
-      );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Wrap(
+          alignment: WrapAlignment.center,
+          children: footerItem,
+        ),
+        const Gap(8),
+        _Acknowledgements(appLocalizations: appLocalizations),
+        const Gap(8),
+        Text(appLocalizations.copyright),
+        const Gap(32),
+      ],
+    );
+  }
+}
+
+class _Acknowledgements extends StatelessWidget {
+  const _Acknowledgements({
+    Key? key,
+    required this.appLocalizations,
+  }) : super(key: key);
+
+  final AppLocalizations appLocalizations;
+
+  @override
+  Widget build(BuildContext context) {
+    return FittedBox(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 4,
+          vertical: 0,
+        ),
+        child: Text(
+          appLocalizations.acknowledgements,
+          style: const TextStyle(fontSize: 10),
+        ),
+      ),
+    );
   }
 }
 

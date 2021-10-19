@@ -19,5 +19,6 @@
     "alphabeticalOrder": "アルファベット順",
     "displayAlphabeticalOrder": "アルファベット順で表示しています",
     "copyright" : "© 2021 FlutterKaigi 実行委員会",
-    "licenses": "ライセンス"
+    "licenses": "ライセンス",
+    "acknowledgements": "ホスティング、ライブ配信は株式会社 Diverse 様、株式会社 DeNA 様にご協力いただいています。"
 }

@@ -18,5 +18,6 @@
     "staff": "Staff",
     "alphabeticalOrder": "listed alphabetically",
     "copyright" : "© 2021 FlutterKaigi Executive Committee",
-    "licenses": "Licenses"
+    "licenses": "Licenses",
+    "acknowledgements": "Special thanks to Diverse, Inc. & DeNA Co., Ltd. for hosting and live streaming"
 }
