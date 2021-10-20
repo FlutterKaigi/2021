@@ -200,13 +200,6 @@ class Body extends StatelessWidget {
                       const Gap(16),
                       const CfsButton(),
                       const Gap(16),
-                      FittedBox(
-                        child: Text(
-                          appLocalizations.endedSubmitProposal,
-                          style: subtitleTextStyle.apply(fontSizeFactor: 0.4),
-                        ),
-                      ),
-                      const Gap(32),
                       const Social(),
                     ],
                   ),
