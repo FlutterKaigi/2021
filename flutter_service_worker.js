@@ -8,7 +8,7 @@ const RESOURCES = {
 "version.json": "a57d15030372c307522da8043a9c566c",
 "icons/Icon-192.png": "02861f4b4a5637703ea4c586181ad448",
 "icons/Icon-512.png": "3f4f8b2bd2c99c17e609b03d55d09e14",
-"main.dart.js": "9f8cda2f498c3185436b876d9d29c05b",
+"main.dart.js": "d4ee95af36584f1ab9baaa120a72518a",
 "favicon.png": "6ca60969d955557b7886c622423ef486",
 "assets/twitter_logo.svg": "631cd5664eb1d4a27681a21ca4ad6126",
 "assets/twitter_white.svg": "903d086cf532ce552a6241ab7aa158e4",
