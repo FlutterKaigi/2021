@@ -1,5 +1,6 @@
 import 'package:confwebsite2021/pages/index.dart';
 import 'package:confwebsite2021/pages/staff.dart';
+import 'package:confwebsite2021/pages/teaser.dart';
 import 'package:confwebsite2021/router/simple_route.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,8 @@ Route<dynamic> buildRouters(RouteSettings settings) {
       return defaultRoute();
     case '/staff':
       return staffRoute();
+    case '/teaser':
+      return teaserRoute();
     default:
       return defaultRoute();
   }
@@ -16,10 +19,19 @@ Route<dynamic> buildRouters(RouteSettings settings) {
 
 SimpleRoute defaultRoute() {
   return SimpleRoute(
-      name: '/', title: 'FlutterKaigi 2021', builder: (context) => const TopPage());
+      name: '/',
+      title: 'FlutterKaigi 2021',
+      builder: (context) => const TopPage());
 }
 
 SimpleRoute staffRoute() {
   return SimpleRoute(
       name: '/staff', title: 'Staff', builder: (context) => const StaffPage());
+}
+
+SimpleRoute teaserRoute() {
+  return SimpleRoute(
+      name: '/teaser',
+      title: 'teaser',
+      builder: (context) => const TeaserPage());
 }
