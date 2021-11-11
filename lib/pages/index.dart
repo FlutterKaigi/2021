@@ -1,7 +1,6 @@
-import 'dart:math' as math;
-
 import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
+import 'package:confwebsite2021/widgets/background.dart';
 import 'package:confwebsite2021/widgets/cfs_button.dart';
 import 'package:confwebsite2021/widgets/connpass_button.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
@@ -35,7 +34,7 @@ class TopPage extends StatelessWidget {
         body: Stack(
           children: [
             const Body(),
-            _Canvas(size: MediaQuery.of(context).size),
+            BackgroundCanvas(size: MediaQuery.of(context).size),
           ],
         ),
       );
@@ -212,103 +211,5 @@ class Body extends StatelessWidget {
         ],
       );
     });
-  }
-}
-
-final _random = math.Random();
-
-class Logo {
-  Offset position = Offset.zero;
-  double angle = 0.0;
-
-  final double rotateSpeed = _random.nextDouble() * math.pi * 0.01;
-  final double speed = _random.nextDouble() * 1 + 0.5;
-  final double size = _random.nextDouble() * 60 + 30;
-
-  Logo(this.position);
-}
-
-final logos = ValueNotifier<List<Logo>>([]);
-
-class _Canvas extends StatefulWidget {
-  const _Canvas({Key? key, required this.size}) : super(key: key);
-
-  final Size size;
-
-  @override
-  _CanvasState createState() => _CanvasState();
-}
-
-class _CanvasState extends State<_Canvas> with SingleTickerProviderStateMixin {
-  late final _controller =
-      AnimationController(vsync: this, duration: const Duration(days: 1))
-        ..addListener(
-          () {
-            final update = [...logos.value];
-            for (final logo in update) {
-              logo.position += Offset(0, -logo.speed);
-              logo.angle += logo.rotateSpeed;
-              if (logo.position.dy < widget.size.height / 3) {
-                final index = logos.value.indexOf(logo);
-                update[index] = generateLogo();
-              }
-            }
-            logos.value = update;
-          },
-        );
-
-  @override
-  void initState() {
-    logos.value = List.generate(10, (index) => generateLogo());
-    _controller.forward();
-    super.initState();
-  }
-
-  Logo generateLogo() => Logo(Offset(
-        widget.size.width * _random.nextDouble(),
-        widget.size.height,
-      ));
-
-  @override
-  Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: logos,
-      builder: (context, List<Logo> value, _) => _Background(logos: value),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-}
-
-class _Background extends StatelessWidget {
-  const _Background({Key? key, required this.logos}) : super(key: key);
-
-  final List<Logo> logos;
-
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    return Stack(
-      children: [
-        for (final logo in logos)
-          Positioned(
-            top: logo.position.dy,
-            left: logo.position.dx,
-            child: Opacity(
-              opacity: (logo.position.dy - height / 3) / height / 3,
-              child: Transform.rotate(
-                angle: logo.angle,
-                child: FlutterLogo(
-                  size: logo.size,
-                ),
-              ),
-            ),
-          )
-      ],
-    );
   }
 }
