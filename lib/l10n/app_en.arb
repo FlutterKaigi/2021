@@ -15,7 +15,11 @@
     "privacyPolicy": "Privacy Policy",
     "contactUs": "Contact Us",
     "staff": "Staff",
+    "session": "Session",
+    "checkSessionDetailInFortee": "Check session detail in fortee",
+    "checkSessionDetailInYouTube": "Check session detail in YouTube",
     "alphabeticalOrder": "listed alphabetically",
+    "timetableOrder": "Ordered by timetable",
     "copyright" : "© 2021 FlutterKaigi Executive Committee",
     "licenses": "Licenses",
     "acknowledgements": "Special thanks to Diverse, Inc. & DeNA Co., Ltd. for hosting and live streaming"
