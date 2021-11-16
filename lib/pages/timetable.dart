@@ -225,12 +225,7 @@ class _SlidePageState extends State<_SlidePage> {
     } else if (event.logicalKey == LogicalKeyboardKey.backspace) {
       previousPage();
     } else if (event.logicalKey == LogicalKeyboardKey.space) {
-      if (showen) {
-        showSession();
-      } else {
-        showSessionList();
-      }
-      // toggleSession();
+      nextPage();
     }
   }
 

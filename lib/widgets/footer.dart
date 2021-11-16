@@ -53,6 +53,22 @@ class Footer extends StatelessWidget {
                 context: context,
               );
             }),
+      )
+      ..add(
+        _FooterButton(
+            message: appLocalizations.teaser,
+            text: appLocalizations.teaser,
+            onPressed: () {
+              Navigator.of(context).pushNamed(teaserRoute().settings.name!);
+            }),
+      )
+      ..add(
+        _FooterButton(
+            message: appLocalizations.interlude,
+            text: appLocalizations.interlude,
+            onPressed: () {
+              Navigator.of(context).pushNamed(timetableRoute().settings.name!);
+            }),
       );
 
     return Column(
