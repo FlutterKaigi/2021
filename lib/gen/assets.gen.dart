@@ -15,6 +15,7 @@ class $AssetsPhotoGen {
 class Assets {
   Assets._();
 
+  static const AssetGenImage banner = AssetGenImage('assets/banner.png');
   static const String discordLogo = 'assets/discord_logo.svg';
   static const String flutterkaigiNavbarLogo =
       'assets/flutterkaigi-navbar_logo.svg';

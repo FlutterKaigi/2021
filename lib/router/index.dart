@@ -1,6 +1,7 @@
 import 'package:confwebsite2021/pages/index.dart';
 import 'package:confwebsite2021/pages/staff.dart';
 import 'package:confwebsite2021/pages/teaser.dart';
+import 'package:confwebsite2021/pages/timetable.dart';
 import 'package:confwebsite2021/router/simple_route.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ Route<dynamic> buildRouters(RouteSettings settings) {
       return staffRoute();
     case '/teaser':
       return teaserRoute();
+    case '/timetable':
+      return timetableRoute();
     default:
       return defaultRoute();
   }
@@ -32,6 +35,13 @@ SimpleRoute staffRoute() {
 SimpleRoute teaserRoute() {
   return SimpleRoute(
       name: '/teaser',
-      title: 'teaser',
+      title: 'Teaser',
       builder: (context) => const TeaserPage());
+}
+
+Route timetableRoute() {
+  return SimpleRoute(
+      name: '/timetable',
+      title: 'Timetable',
+      builder: (context) => const TimetablePage());
 }
