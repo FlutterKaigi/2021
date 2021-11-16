@@ -112,7 +112,7 @@ class CardItem extends StatelessWidget {
     final appLocalizations = AppLocalizations.of(context)!;
 
     return Tooltip(
-        message: appLocalizations.checkSessionDetailInFortee,
+        message: appLocalizations.checkSessionDetailsInFortee,
         child: Card(
             elevation: 3,
             child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
