@@ -349,7 +349,7 @@ class _SessionList extends StatelessWidget {
                 index == 0 || (timetable[index - 1].uuid != current.uuid)
                     ? null
                     : kSkyblue;
-            return Divider(color: color);
+            return Divider(color: color, thickness: 1.0);
           },
         ),
       ),
