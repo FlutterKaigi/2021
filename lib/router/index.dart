@@ -40,6 +40,7 @@ SimpleRoute teaserRoute() {
       name: '/teaser',
       title: 'Teaser',
       builder: (context) => const TeaserPage());
+}
 
 SimpleRoute sessionRoute() {
   return SimpleRoute(
