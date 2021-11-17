@@ -38,6 +38,14 @@ class Footer extends StatelessWidget {
     }).toList()
       ..add(
         _FooterButton(
+            message: appLocalizations.session,
+            text: appLocalizations.session,
+            onPressed: () {
+              Navigator.of(context).pushNamed(sessionRoute().settings.name!);
+            }),
+      )
+      ..add(
+        _FooterButton(
             message: appLocalizations.staff,
             text: appLocalizations.staff,
             onPressed: () {
