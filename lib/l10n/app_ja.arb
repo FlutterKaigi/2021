@@ -15,8 +15,12 @@
     "privacyPolicy": "プライバシーポリシー",
     "contactUs": "お問い合わせ",
     "staff": "スタッフ",
+    "session": "セッション",
+    "checkSessionDetailsInFortee": "forteeでセッションの詳細をチェック",
+    "checkSessionDetailsInYouTube": "YouTubeでセッションの詳細をチェック",
     "alphabeticalOrder": "アルファベット順",
     "displayAlphabeticalOrder": "アルファベット順で表示しています",
+    "timetableOrder": "タイムテーブル順",
     "copyright" : "© 2021 FlutterKaigi 実行委員会",
     "licenses": "ライセンス",
     "acknowledgements": "ホスティング、ライブ配信は株式会社 Diverse 様、株式会社 DeNA 様にご協力いただいています。"
