@@ -1,6 +1,7 @@
 import 'package:confwebsite2021/pages/index.dart';
 import 'package:confwebsite2021/pages/session.dart';
 import 'package:confwebsite2021/pages/staff.dart';
+import 'package:confwebsite2021/pages/teaser.dart';
 import 'package:confwebsite2021/router/simple_route.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ Route<dynamic> buildRouters(RouteSettings settings) {
       return defaultRoute();
     case '/staff':
       return staffRoute();
+    case '/teaser':
+      return teaserRoute();
     case '/session':
       return sessionRoute();
     default:
@@ -27,6 +30,13 @@ SimpleRoute defaultRoute() {
 SimpleRoute staffRoute() {
   return SimpleRoute(
       name: '/staff', title: 'Staff', builder: (context) => const StaffPage());
+}
+
+SimpleRoute teaserRoute() {
+  return SimpleRoute(
+      name: '/teaser',
+      title: 'teaser',
+      builder: (context) => const TeaserPage());
 }
 
 SimpleRoute sessionRoute() {
