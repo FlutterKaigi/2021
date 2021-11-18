@@ -23,5 +23,7 @@
     "timetableOrder": "タイムテーブル順",
     "copyright" : "© 2021 FlutterKaigi 実行委員会",
     "licenses": "ライセンス",
+    "teaser": "ティーザー",
+    "interlude": "インタールード",
     "acknowledgements": "ホスティング、ライブ配信は株式会社 Diverse 様、株式会社 DeNA 様にご協力いただいています。"
 }

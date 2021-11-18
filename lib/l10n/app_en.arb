@@ -22,5 +22,7 @@
     "timetableOrder": "Ordered by start time",
     "copyright" : "© 2021 FlutterKaigi Executive Committee",
     "licenses": "Licenses",
+    "teaser": "Teaser",
+    "interlude": "Interlude",
     "acknowledgements": "Special thanks to Diverse, Inc. & DeNA Co., Ltd. for hosting and live streaming"
 }

@@ -35,3 +35,7 @@ class AppTheme {
     );
   }
 }
+
+const kSkyblue = Color(0xFF4ACCEB);
+const kBlue = Color(0xFF174C90);
+const kRed = Color(0xFFCA2421);
