@@ -74,7 +74,13 @@ class _TeaserState extends State<_Teaser> with SingleTickerProviderStateMixin {
           ),
           Text('FlutterKaigi', style: titleTextStyle),
           const Gap(32),
-          Text('@ONLINE / November 29-30, 2021', style: subtitleTextStyle),
+          Center(
+            child: Text(
+              '@ONLINE / November 29-30, 2021',
+              style: subtitleTextStyle,
+              textAlign: TextAlign.center,
+            ),
+          ),
           const Gap(32),
           CountdownTimer(
             controller: controller,
