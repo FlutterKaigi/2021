@@ -2,6 +2,7 @@ import 'package:confwebsite2021/router/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:styled_text/styled_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
@@ -90,6 +91,18 @@ class Footer extends StatelessWidget {
         _Acknowledgements(appLocalizations: appLocalizations),
         const Gap(8),
         Text(appLocalizations.copyright),
+        const Gap(8),
+        Text(appLocalizations.disclaimer, textAlign: TextAlign.center),
+        const Gap(4),
+        StyledText(
+          text: appLocalizations.trademark,
+          textAlign: TextAlign.center,
+          tags: {
+            'FlutterLogo': StyledTextWidgetTag(
+              const FlutterLogo(),
+            ),
+          },
+        ),
         const Gap(32),
       ],
     );
