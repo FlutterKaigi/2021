@@ -3,11 +3,24 @@
 ///  FlutterGen
 /// *****************************************************
 
+// ignore_for_file: directives_ordering
+
 import 'package:flutter/widgets.dart';
+
+class $AssetsMusicGen {
+  const $AssetsMusicGen();
+
+  /// File path: assets/music/bensound-dreams.mp3
+  String get bensoundDreams => 'assets/music/bensound-dreams.mp3';
+
+  /// File path: assets/music/bensound-thelounge.mp3
+  String get bensoundThelounge => 'assets/music/bensound-thelounge.mp3';
+}
 
 class $AssetsPhotoGen {
   const $AssetsPhotoGen();
 
+  /// File path: assets/photo/katsummy.png
   AssetGenImage get katsummy =>
       const AssetGenImage('assets/photo/katsummy.png');
 }
@@ -21,6 +34,7 @@ class Assets {
       'assets/flutterkaigi-navbar_logo.svg';
   static const String flutterkaigiLogo = 'assets/flutterkaigi_logo.svg';
   static const String githubLogo = 'assets/github_logo.svg';
+  static const $AssetsMusicGen music = $AssetsMusicGen();
   static const $AssetsPhotoGen photo = $AssetsPhotoGen();
   static const String twitterLogo = 'assets/twitter_logo.svg';
   static const String twitterWhite = 'assets/twitter_white.svg';

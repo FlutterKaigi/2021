@@ -23,6 +23,7 @@ dependencies:
   google_fonts:
   sprintf: ^6.0.0
   styled_text: ^3.0.4+1
+  just_audio: ^0.9.18
 
 dev_dependencies:
   build_runner:
@@ -38,3 +39,4 @@ flutter:
   assets:
     - assets/
     - assets/photo/
+    - assets/music/

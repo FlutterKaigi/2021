@@ -6,6 +6,7 @@ import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:sprintf/sprintf.dart';
 
 class TeaserPage extends StatelessWidget {
@@ -51,12 +52,17 @@ class _TeaserState extends State<_Teaser> with SingleTickerProviderStateMixin {
 
   double get logoWidth => 320;
   late CountdownTimerController controller;
+  late AudioPlayer audioPlayer;
 
   @override
   void initState() {
     super.initState();
     controller =
         CountdownTimerController(endTime: endTime, onEnd: onEnd, vsync: this);
+    audioPlayer = AudioPlayer();
+    audioPlayer.setLoopMode(LoopMode.all);
+    audioPlayer.setAsset(Assets.music.bensoundDreams);
+    audioPlayer.play();
   }
 
   void onEnd() {}
@@ -135,6 +141,7 @@ class _TeaserState extends State<_Teaser> with SingleTickerProviderStateMixin {
   @override
   void dispose() {
     controller.dispose();
+    audioPlayer.dispose();
     super.dispose();
   }
 }
