@@ -25,5 +25,7 @@
     "licenses": "ライセンス",
     "teaser": "ティーザー",
     "interlude": "インタールード",
+    "disclaimer": "Flutter and the related logo are trademarks of Google LLC. FlutterKaigi is not affiliated with or otherwise sponsored by Google LLC.",
+    "trademark" : "The \"Flutter\" name and the Flutter logo <FlutterLogo/> (the \"Flutter Marks\") are trademarks owned by Google.",
     "acknowledgements": "ホスティング、ライブ配信は株式会社 Diverse 様、株式会社 DeNA 様にご協力いただいています。"
 }
