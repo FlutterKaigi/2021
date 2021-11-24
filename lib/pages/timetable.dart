@@ -104,7 +104,7 @@ class _SlidePage extends StatefulWidget {
 }
 
 class _SlidePageState extends State<_SlidePage> {
-  final PageController _controller = PageController(initialPage: 1);
+  final PageController _controller = PageController();
   final FocusNode _focusNode = FocusNode();
   Timer? _timer;
 
