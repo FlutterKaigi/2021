@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:just_audio/just_audio.dart';
 
 class TimetablePage extends StatelessWidget {
   const TimetablePage({Key? key}) : super(key: key);
@@ -41,10 +42,15 @@ class _TimetableState extends State<_Timetable>
     with SingleTickerProviderStateMixin {
   TextStyle get titleTextStyle => const TextStyle(fontSize: 64);
   TextStyle get subtitleTextStyle => const TextStyle(fontSize: 36);
+  late AudioPlayer audioPlayer;
 
   @override
   void initState() {
     super.initState();
+    audioPlayer = AudioPlayer();
+    audioPlayer.setLoopMode(LoopMode.all);
+    audioPlayer.setAsset(Assets.music.bensoundThelounge);
+    audioPlayer.play();
   }
 
   Future<List<Timetable>> _getFutureValue() async {
@@ -80,6 +86,7 @@ class _TimetableState extends State<_Timetable>
 
   @override
   void dispose() {
+    audioPlayer.dispose();
     super.dispose();
   }
 }
@@ -97,7 +104,7 @@ class _SlidePage extends StatefulWidget {
 }
 
 class _SlidePageState extends State<_SlidePage> {
-  final PageController _controller = PageController(initialPage: 1);
+  final PageController _controller = PageController();
   final FocusNode _focusNode = FocusNode();
   Timer? _timer;
 
