@@ -2,9 +2,9 @@ import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/widgets/background.dart';
 import 'package:confwebsite2021/widgets/cfs_button.dart';
-import 'package:confwebsite2021/widgets/connpass_button.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
 import 'package:confwebsite2021/widgets/social.dart';
+import 'package:confwebsite2021/widgets/youtube_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -195,7 +195,7 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       const Gap(32),
-                      const ConnpassButton(),
+                      const YouTubeButtons(),
                       const Gap(16),
                       const CfsButton(),
                       const Gap(16),
