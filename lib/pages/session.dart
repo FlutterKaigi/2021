@@ -128,12 +128,18 @@ class CardItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(name,
-                          style: const TextStyle(
-                              fontSize: 14.0, fontWeight: FontWeight.normal)),
-                      Text(datetime,
-                          style: const TextStyle(
-                              fontSize: 12.0, fontWeight: FontWeight.normal)),
+                      Container(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(name,
+                            style: const TextStyle(
+                                fontSize: 14.0, fontWeight: FontWeight.normal)),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(datetime,
+                            style: const TextStyle(
+                                fontSize: 12.0, fontWeight: FontWeight.normal)),
+                      ),
                     ]),
                 trailing: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
