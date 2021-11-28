@@ -102,19 +102,19 @@ class _TeaserState extends State<_Teaser> with SingleTickerProviderStateMixin {
                   children: [
                     TableRow(children: [
                       Center(
-                          child: Text(sprintf("%02i", [time.days]),
+                          child: Text(sprintf("%02i", [time.days ?? 0]),
                               style: timeTextStyle)),
                       const SizedBox(width: 8),
                       Center(
-                          child: Text(sprintf("%02i", [time.hours]),
+                          child: Text(sprintf("%02i", [time.hours ?? 0]),
                               style: timeTextStyle)),
                       const SizedBox(width: 8),
                       Center(
-                          child: Text(sprintf("%02i", [time.min]),
+                          child: Text(sprintf("%02i", [time.min ?? 0]),
                               style: timeTextStyle)),
                       const SizedBox(width: 8),
                       Center(
-                          child: Text(sprintf("%02i", [time.sec]),
+                          child: Text(sprintf("%02i", [time.sec ?? 0]),
                               style: timeTextStyle)),
                     ]),
                     const TableRow(children: [
