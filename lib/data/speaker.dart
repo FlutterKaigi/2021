@@ -82,7 +82,7 @@ final kSpeakerList = {
   },
   9: {
     'title': 'Textの構造を理解する',
-    'name': 'kafumi',
+    'name': 'batch',
     'datetime': '11/30 19:10-19:40',
     'twitter': 'https://twitter.com/b4tchkn',
     'fortee':
@@ -91,7 +91,7 @@ final kSpeakerList = {
   },
   10: {
     'title': 'アクセシビリティが高いFlutterアプリケーションを開発する',
-    'name': 'kafumi',
+    'name': '1059999',
     'datetime': '11/30 19:45-20:15',
     'twitter': 'https://twitter.com/akihisasen',
     'fortee':
