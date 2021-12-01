@@ -2,7 +2,6 @@ import 'package:confwebsite2021/gen/assets.gen.dart';
 import 'package:confwebsite2021/responsive_layout_builder.dart';
 import 'package:confwebsite2021/widgets/background.dart';
 import 'package:confwebsite2021/widgets/cfs_button.dart';
-import 'package:confwebsite2021/widgets/connpass_button.dart';
 import 'package:confwebsite2021/widgets/footer.dart';
 import 'package:confwebsite2021/widgets/social.dart';
 import 'package:flutter/material.dart';
@@ -154,6 +153,8 @@ class Body extends StatelessWidget {
 
   TextStyle get subtitleTextStyle => const TextStyle(fontSize: 36);
 
+  TextStyle get thanksTextStyle => const TextStyle(fontSize: 14);
+
   int get logoWidth => 320;
 
   @override
@@ -195,7 +196,14 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       const Gap(32),
-                      const ConnpassButton(),
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Text(
+                          appLocalizations.thanksToEveryone,
+                          style:
+                              thanksTextStyle.apply(fontSizeFactor: sizeFactor),
+                        ),
+                      ),
                       const Gap(16),
                       const CfsButton(),
                       const Gap(16),
