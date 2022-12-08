@@ -21,14 +21,14 @@ dependencies:
   transparent_image: ^2.0.0
   flutter_countdown_timer: ^4.1.0
   google_fonts:
-  sprintf: ^6.0.0
-  styled_text: ^5.1.0
+  sprintf: ^7.0.0
+  styled_text: ^6.0.0
   just_audio: ^0.9.20
 
 dev_dependencies:
   build_runner:
   flutter_gen_runner:
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
   url_launcher: ^6.0.20
